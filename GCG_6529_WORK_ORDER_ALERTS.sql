@@ -1,0 +1,15 @@
+-- Database: GLOBALPLA Metadata version: 2 Exported: Feb 21, 2022
+-- Begin Tables
+SET LEGACYTYPESALLOWED = ON;
+-- Begin Multi-Line Statement
+CREATE TABLE "GCG_6529_Work_Order_Alerts" USING 'GCG_6529_Work_Order_Alerts.mkd' PAGESIZE=4096 (
+ "ALERT_ID" BIGIDENTITY DEFAULT '0' CONSTRAINT "UK_ALERT_ID" UNIQUE USING 0,
+ "ALERT" LONGVARCHAR,
+ "SEVERITY" CHAR(30),
+ "TYPE" CHAR(1),
+ "PART" CHAR(20),
+ "DATE_SET" DATE,
+ "DATE_EXP" DATE );
+-- End Multi-Line Statement
+SET LEGACYTYPESALLOWED = OFF;
+-- End Tables
