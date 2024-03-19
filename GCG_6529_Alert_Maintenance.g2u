@@ -1,0 +1,401 @@
+Program.Sub.ScreenSU.Start
+Gui.AlertMaintain..Create
+Gui.AlertMaintain..Caption("Alert Maintenance")
+Gui.AlertMaintain..Size(8070,7845)
+Gui.AlertMaintain..MinX(0)
+Gui.AlertMaintain..MinY(0)
+Gui.AlertMaintain..Position(0,0)
+Gui.AlertMaintain..BackColor(-2147483633)
+Gui.AlertMaintain..MousePointer(0)
+Gui.AlertMaintain..Event(UnLoad,autoMaintain_UnLoad)
+Gui.AlertMaintain..MaxButton(False)
+Gui.AlertMaintain..Sizeable(False)
+Gui.AlertMaintain.cmdSave.Create(Button)
+Gui.AlertMaintain.cmdSave.Size(1140,375)
+Gui.AlertMaintain.cmdSave.Position(6765,1410)
+Gui.AlertMaintain.cmdSave.Caption("SAVE")
+Gui.AlertMaintain.cmdSave.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.cmdSave.Event(Click,cmdSave_Click)
+Gui.AlertMaintain.cmdSave.TabStop(True)
+Gui.AlertMaintain.cmdSave.TabIndex(9)
+Gui.AlertMaintain.txtPart.Create(TextBox,"",True,1020,300,0,150,360,True,2,"Arial",8,-2147483643,1)
+Gui.AlertMaintain.txtPart.MaxLength(20)
+Gui.AlertMaintain.txtPart.DefaultValue("")
+Gui.AlertMaintain.txtPart.TabStop(True)
+Gui.AlertMaintain.txtPart.TabIndex(1)
+Gui.AlertMaintain.lblPart.Create(Label,"Part",True,1035,255,0,150,120,True,2,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblPart.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.txtAlert.Create(TextBox,"",True,4830,300,0,1695,360,True,0,"Arial",8,-2147483643,1)
+Gui.AlertMaintain.txtAlert.TabStop(True)
+Gui.AlertMaintain.txtAlert.TabIndex(3)
+Gui.AlertMaintain.lblAlert.Create(Label,"Alert",True,4200,255,0,1710,120,True,0,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblAlert.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.GsGcAlert.Create(GsGridControl)
+Gui.AlertMaintain.GsGcAlert.Size(7770,5430)
+Gui.AlertMaintain.GsGcAlert.Position(120,1845)
+Gui.AlertMaintain.GsGcAlert.Event(RowClick,GsGcAlert_RowClick)
+Gui.AlertMaintain.GsGcAlert.Event(RowCellClick,GsGcAlert_RowCellClick)
+Gui.AlertMaintain.cmdBrowsePart.Create(Button)
+Gui.AlertMaintain.cmdBrowsePart.Size(345,345)
+Gui.AlertMaintain.cmdBrowsePart.Position(1245,330)
+Gui.AlertMaintain.cmdBrowsePart.Caption("BROWSE")
+Gui.AlertMaintain.cmdBrowsePart.Event(Click,cmdBrowsePart_Click)
+Gui.AlertMaintain.cmdBrowsePart.TabStop(True)
+Gui.AlertMaintain.cmdBrowsePart.TabIndex(2)
+Gui.AlertMaintain.lblSize.Create(Label,"Severity",True,1095,255,0,6585,780,True,0,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblSize.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.cboSeverity.Create(ComboBox)
+Gui.AlertMaintain.cboSeverity.Size(1320,330)
+Gui.AlertMaintain.cboSeverity.Position(6585,1005)
+Gui.AlertMaintain.cboSeverity.TabStop(True)
+Gui.AlertMaintain.cboSeverity.TabIndex(7)
+Gui.AlertMaintain.lblType.Create(Label,"Type",True,1275,255,0,6600,135,True,0,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblType.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.cboType.Create(ComboBox)
+Gui.AlertMaintain.cboType.Size(1320,330)
+Gui.AlertMaintain.cboType.Position(6585,345)
+Gui.AlertMaintain.cboType.TabStop(True)
+Gui.AlertMaintain.cboType.TabIndex(4)
+Gui.AlertMaintain.chk1.Create(CheckBox)
+Gui.AlertMaintain.chk1.Size(1560,360)
+Gui.AlertMaintain.chk1.Position(5175,1410)
+Gui.AlertMaintain.chk1.Caption("Save to All CC")
+Gui.AlertMaintain.chk1.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.chk1.TabStop(True)
+Gui.AlertMaintain.chk1.TabIndex(8)
+Gui.AlertMaintain.cmdClear.Create(Button)
+Gui.AlertMaintain.cmdClear.Size(1140,375)
+Gui.AlertMaintain.cmdClear.Position(3885,1410)
+Gui.AlertMaintain.cmdClear.Caption("CLEAR")
+Gui.AlertMaintain.cmdClear.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.cmdClear.Event(Click,cmdClear_Click)
+Gui.AlertMaintain.cmdClear.TabStop(True)
+Gui.AlertMaintain.cmdClear.TabIndex(10)
+Gui.AlertMaintain.dtpStart.Create(DatePicker)
+Gui.AlertMaintain.dtpStart.Size(1935,285)
+Gui.AlertMaintain.dtpStart.Position(1290,1020)
+Gui.AlertMaintain.dtpStart.TabStop(True)
+Gui.AlertMaintain.dtpStart.TabIndex(5)
+Gui.AlertMaintain.dtpEnd.Create(DatePicker)
+Gui.AlertMaintain.dtpEnd.Size(1935,285)
+Gui.AlertMaintain.dtpEnd.Position(4545,1020)
+Gui.AlertMaintain.dtpEnd.TabStop(True)
+Gui.AlertMaintain.dtpEnd.TabIndex(6)
+Gui.AlertMaintain.lblDtStart.Create(Label,"Start Date:",True,1110,255,0,105,1110,True,0,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblDtStart.FontStyle(True,False,False,False,False)
+Gui.AlertMaintain.lblDtStart.DefaultValue("")
+Gui.AlertMaintain.lblDtEnd.Create(Label,"Expires:",True,915,255,0,3570,1110,True,0,"Arial",8,-2147483633,0)
+Gui.AlertMaintain.lblDtEnd.DefaultValue("")
+Gui.AlertMaintain.lblDtEnd.FontStyle(True,False,False,False,False)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sAlertID.Declare
+v.Global.sAlertID.Set(0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Robert Cole 10/29/2021
+'Added/ Changed:
+
+gui.AlertMaintain.cboSeverity.AddItem("LOW")
+gui.AlertMaintain.cboSeverity.AddItem("MEDIUM")
+gui.AlertMaintain.cboSeverity.AddItem("HIGH")
+gui.AlertMaintain.cboSeverity.AddItem("QUALITY")
+
+f.Intrinsic.Control.CallSub(Data_Load)
+
+gui.AlertMaintain..Visible(true)
+Program.Sub.Main.End
+
+Program.Sub.autoMaintain_UnLoad.Start
+'CLOSE EVERYTHING AND UNLOAD MAINTENANCE SCREEN
+gui.AlertMaintain..Visible(false)
+
+f.Intrinsic.Control.End
+Program.Sub.autoMaintain_UnLoad.End
+
+Program.Sub.Data_Load.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.DataTable.dtAlert.Exists,=,True)
+	f.Data.DataView.Close("dtAlert","dvAlert")
+	f.Data.DataTable.Close("dtAlert")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Data.DataTable.CreateFromSQL("dtAlert","conx","Select ALERT_ID, PART, ALERT, TYPE, SEVERITY, DATE_SET, DATE_EXP from GCG_6529_Work_Order_Alerts",true)
+
+f.ODBC.Connection!conx.Close
+
+f.Data.DataTable.AddColumn("dtAlert","DELETE","string")
+
+f.Data.DataView.Create("dtAlert","dvAlert",22)
+
+gui.AlertMaintain.GsGcAlert.AddGridviewFromDataview("gvAlert","dtAlert","dvAlert")
+
+f.Intrinsic.Control.CallSub(Alert_Format)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Data_Load.End
+
+Program.Sub.Alert_Format.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.i.Declare
+
+gui.AlertMaintain.GsGcAlert.Visible(false)
+gui.AlertMaintain.GsGcAlert.SuspendLayout
+
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","Caption","")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","HeaderFontBold","TRUE")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","HeaderHAlignment","CENTER")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","CellHAlignment","LEFT")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","MinWidth",)
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","MaxWidth",)
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","DisplayCustomNumeric","$###,##0.00")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","ReadOnly","TRUE")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","AllowEdit","FALSE")
+'gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","","VisibleIndex",v.Local.i)
+'f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT_ID","Visible",false)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","Caption","Part")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","MinWidth",85)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","PART","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","Caption","Alert")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","MinWidth",300)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","ALERT","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","Caption","Type")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","MinWidth",35)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","TYPE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","Caption","Severity")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","MinWidth",85)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","SEVERITY","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","Caption","Date Set")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","MinWidth",115)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","DisplayCustomDatetime","d")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_SET","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","Caption","Expires")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","CellHAlignment","LEFT")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","MinWidth",115)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","DisplayCustomDatetime","d")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DATE_EXP","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","Caption","Del")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","HeaderFontBold","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","HeaderHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","CellHAlignment","CENTER")
+gui.AlertMaintain.GsGcAlert.ColumnEdit("gvAlert","DELETE","EditorButton","DEL")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","MinWidth",45)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","MaxWidth",45)
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","ReadOnly","TRUE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","AllowEdit","FALSE")
+gui.AlertMaintain.GsGcAlert.SetColumnProperty("gvAlert","DELETE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.AlertMaintain.GsGcAlert.MainView("gvAlert")
+
+gui.AlertMaintain.GsGcAlert.SetGridviewProperty("gvAlert","Editable",false)
+gui.AlertMaintain.GsGcAlert.SetGridviewProperty("gvAlert","ReadOnly",true)
+
+gui.AlertMaintain.GsGcAlert.ResumeLayout
+gui.AlertMaintain.GsGcAlert.Visible(true)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Alert_Format.End
+
+Program.Sub.cmdSave_Click.Start
+'ADD NEW RECORD FOR NEW MACHINE IDS OR UPDATE INFORMATION FOR EXISTING MACHINE IDS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sDescT.Declare
+v.Local.sSQL.Declare
+v.Local.iRet.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.Control.If(v.Screen.AlertMaintain!txtPART.Text,<>,"",and,v.Screen.AlertMaintain!txtTYPE.Text,<>,"",v.Screen.AlertMaintain!txtSEVERITY.Text,<>,"",v.Screen.AlertMaintain!txtALERT.Text,<>,"")
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+
+	f.ODBC.Connection!conx.ExecuteandReturn("select isnull(max(cast(ALERT_ID as int)),0)+1 as ID from GCG_6529_Work_Order_Alerts",v.Local.iRet)
+	f.Intrinsic.String.Build("select * from GCG_6529_Work_Order_Alerts where ALERT_ID = '{0}'",v.Global.sAlertID,v.Local.sSQL)
+	f.ODBC.Connection!conx.OpenLocalRecordsetRW("ALR",v.Local.sSQL)
+	f.Intrinsic.Control.If(v.ODBC.conx!ALR.EOF,=,true)
+		f.ODBC.conx!ALR.AddNew
+		f.ODBC.conx!ALR.Set!ALERT_ID(v.Local.iRet)
+	f.Intrinsic.Control.EndIf
+		f.ODBC.conx!ALR.Set!PART(v.Screen.AlertMaintain!txtPart.Text)
+		f.ODBC.conx!ALR.Set!ALERT(v.Screen.AlertMaintain!txtAlert.Text)
+		f.ODBC.conx!ALR.Set!SEVERITY(v.Screen.AlertMaintain!cboSeverity.Text)
+		f.ODBC.conx!ALR.Set!TYPE(v.Screen.AlertMaintain!cboType.Text)
+		f.Intrinsic.String.Format(v.Screen.AlertMaintain!dtpStart.Value,"yyyy-mm-dd",v.Local.sDate)
+		f.ODBC.conx!ALR.Set!DATE_SET(v.Local.sDate)
+		f.Intrinsic.String.Format(v.Screen.AlertMaintain!dtpEnd.Value,"yyyy-mm-dd",v.Local.sDate)
+		f.ODBC.conx!ALR.Set!DATE_EXP(v.Local.sDate)
+		f.ODBC.conx!ALR.Update
+	f.ODBC.Connection!conx.Close
+	
+	f.Intrinsic.Control.CallSub(cmdClear_Click)
+	
+	f.Intrinsic.UI.Msgbox("Alert information has been saved.","SUCCESS!")
+	
+	f.Intrinsic.Control.CallSub(Data_Load)
+	
+f.Intrinsic.Control.Else
+
+	f.Intrinsic.UI.Msgbox("All values need to be filled out.  Cannot have blank values.","ERROR")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.GsGcAlert_RowClick.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.AlertMaintain.txtPart.Text(v.DataTable.dtAlert(v.Args.RowIndex).PART!FieldValTrim)
+gui.AlertMaintain.txtAlert.Text(v.DataTable.dtAlert(v.Args.RowIndex).ALERT!FieldValTrim)
+gui.AlertMaintain.cboSeverity.Text(v.DataTable.dtAlert(v.Args.RowIndex).SEVERITY!FieldValTrim)
+gui.AlertMaintain.cboType.Text(v.DataTable.dtAlert(v.Args.RowIndex).TYPE!FieldValTrim)
+gui.AlertMaintain.dtpStart.Value(v.DataTable.dtAlert(v.Args.RowIndex).DATE_SET!FieldVal)
+gui.AlertMaintain.dtpEnd.Value(v.DataTable.dtAlert(v.Args.RowIndex).DATE_EXP!FieldVal)
+v.Global.sAlertID.Set(v.DataTable.dtAlert(v.Args.RowIndex).ALERT_ID!FieldValTrim)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcAlert_RowClick.End
+
+Program.Sub.cmdClear_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.AlertMaintain.txtPART.Text("")
+gui.AlertMaintain.txtAlert.Text("")
+gui.AlertMaintain.cboSeverity.Text("")
+gui.AlertMaintain.cboType.Text("")
+gui.AlertMaintain.dtpStart.Value("1/1/1900")
+gui.AlertMaintain.dtpEnd.Value("1/1/1900")
+v.Global.sAlertID.Set("0")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.GsGcAlert_RowCellClick.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+
+f.Intrinsic.Control.If(v.Args.Column,=,"DELETE")
+
+	f.Intrinsic.UI.Msgbox("Are you sure you want to delete this line?","DELETE",4,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRET,=,v.Ambient.MsgBoxYes)
+	
+		f.Intrinsic.String.Build("Delete from GCG_6529_Work_Order_Alerts where ALERT_ID = '{0}'",v.DataTable.dtAlert(v.Args.RowIndex).ALERT_ID!FieldVal,v.Local.sSQL)
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.ODBC.Connection!conx.Close
+		
+		f.Intrinsic.Control.CallSub(cmdClear_Click)
+		f.Intrinsic.Control.CallSub(Data_Load)
+		
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcAlert_RowCellClick.End
+
+Program.Sub.cmdBrowsePart_Click.Start
+'OPEN BROWSER TO SELECT CUSTOMER
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+v.Local.sRet.Declare
+
+f.Intrinsic.UI.Browser(105,,v.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.AlertMaintain.txtPart.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowsePart_Click.End
