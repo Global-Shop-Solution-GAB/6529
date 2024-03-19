@@ -1,0 +1,2692 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.WOInstr..Create(BaseForm)
+Gui.WOInstr..Caption("Work Order Instruction")
+Gui.WOInstr..Size(17910,11280)
+Gui.WOInstr..MinX(0)
+Gui.WOInstr..MinY(0)
+Gui.WOInstr..Position(0,0)
+Gui.WOInstr..BackColor(-2147483633)
+Gui.WOInstr..MousePointer(0)
+Gui.WOInstr..Event(UnLoad,WOInstr_UnLoad)
+Gui.WOInstr..AlwaysOnTop(True)
+Gui.WOInstr..FontName("Tahoma")
+Gui.WOInstr..FontSize(8.25)
+Gui.WOInstr..ControlBox(True)
+Gui.WOInstr..MaxButton(True)
+Gui.WOInstr..MinButton(True)
+Gui.WOInstr..Moveable(True)
+Gui.WOInstr..Sizeable(True)
+Gui.WOInstr..ShowInTaskBar(True)
+Gui.WOInstr..TitleBar(True)
+Gui.WOInstr.frmControl.Create(Frame)
+Gui.WOInstr.frmControl.Size(17775,930)
+Gui.WOInstr.frmControl.Position(60,45)
+Gui.WOInstr.frmControl.Anchor(13)
+Gui.WOInstr.frmControl.Enabled(True)
+Gui.WOInstr.frmControl.Visible(True)
+Gui.WOInstr.frmControl.Zorder(0)
+Gui.WOInstr.frmControl.Caption("")
+Gui.WOInstr.frmControl.FontName("Tahoma")
+Gui.WOInstr.frmControl.FontSize(8.25)
+Gui.WOInstr.frmControl.BorderStyle(0)
+Gui.WOInstr.txtScan.Create(TextBox,"",True,2595,300,0,45,105,True,0,"Arial",8,-2147483643,1)
+Gui.WOInstr.txtScan.Parent("frmControl")
+Gui.WOInstr.txtScan.Event(KeyPressEnter,txtParent_KeyPressEnter)
+Gui.WOInstr.lblJob.Create(Label,"Job",False,255,210,0,45,195,False,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblJob.Parent("frmControl")
+Gui.WOInstr.lblJob.BorderStyle(0)
+Gui.WOInstr.lblJob.ForeColor(0)
+Gui.WOInstr.lblParent.Create(Label,"Parent",True,930,360,0,45,465,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblParent.Parent("frmControl")
+Gui.WOInstr.lblParent.BorderStyle(0)
+Gui.WOInstr.lblParent.ForeColor(0)
+Gui.WOInstr.lblPDesc.Create(Label,"Parent Description",False,2610,360,0,4095,465,False,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblPDesc.Parent("frmControl")
+Gui.WOInstr.lblPDesc.BorderStyle(0)
+Gui.WOInstr.lblPDesc.ForeColor(0)
+Gui.WOInstr.lblDueDate.Create(Label,"Due Date",False,1335,360,0,11520,465,False,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblDueDate.Parent("frmControl")
+Gui.WOInstr.lblDueDate.BorderStyle(0)
+Gui.WOInstr.lblDueDate.ForeColor(0)
+Gui.WOInstr.cmdTeamUp.Create(Button)
+Gui.WOInstr.cmdTeamUp.Enabled(False)
+Gui.WOInstr.cmdTeamUp.Visible(False)
+Gui.WOInstr.cmdTeamUp.Zorder(0)
+Gui.WOInstr.cmdTeamUp.Size(405,405)
+Gui.WOInstr.cmdTeamUp.Position(17295,45)
+Gui.WOInstr.cmdTeamUp.Anchor(11)
+Gui.WOInstr.cmdTeamUp.Caption("")
+Gui.WOInstr.cmdTeamUp.FontName("Tahoma")
+Gui.WOInstr.cmdTeamUp.FontSize(16)
+Gui.WOInstr.cmdTeamUp.SvgPicture("arrow_circle_up_black")
+Gui.WOInstr.cmdTeamUp.SvgPictureSize(300,300)
+Gui.WOInstr.cmdTeamUp.Parent("frmControl")
+Gui.WOInstr.cmdTeamUp.Event(Click,cmdTeamUp_Click)
+Gui.WOInstr.cmdTeamDown.Create(Button)
+Gui.WOInstr.cmdTeamDown.Enabled(False)
+Gui.WOInstr.cmdTeamDown.Visible(False)
+Gui.WOInstr.cmdTeamDown.Zorder(0)
+Gui.WOInstr.cmdTeamDown.Size(405,405)
+Gui.WOInstr.cmdTeamDown.Position(17295,480)
+Gui.WOInstr.cmdTeamDown.Anchor(11)
+Gui.WOInstr.cmdTeamDown.Caption("")
+Gui.WOInstr.cmdTeamDown.FontName("Tahoma")
+Gui.WOInstr.cmdTeamDown.FontSize(16)
+Gui.WOInstr.cmdTeamDown.SvgPicture("arrow_circle_down_black")
+Gui.WOInstr.cmdTeamDown.SvgPictureSize(300,300)
+Gui.WOInstr.cmdTeamDown.Parent("frmControl")
+Gui.WOInstr.cmdTeamDown.Event(Click,cmdTeamDown_Click)
+Gui.WOInstr.lblTeamSize.Create(Label,"Team Size",True,750,210,0,16305,30,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblTeamSize.BorderStyle(0)
+Gui.WOInstr.lblTeamSize.Parent("frmControl")
+Gui.WOInstr.lblTeamSize.ForeColor(0)
+Gui.WOInstr.lblTeamSize.Anchor(11)
+Gui.WOInstr.lblTeam.Create(Label,"1",True,270,555,0,16380,300,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblTeam.BorderStyle(0)
+Gui.WOInstr.lblTeam.ForeColor(0)
+Gui.WOInstr.lblTeam.Parent("frmControl")
+Gui.WOInstr.lblTeam.FontStyle(True,False,False,False,False)
+Gui.WOInstr.lblTeam.Anchor(11)
+Gui.WOInstr.frmChildCtrl.Create(Frame)
+Gui.WOInstr.frmChildCtrl.Enabled(True)
+Gui.WOInstr.frmChildCtrl.Visible(True)
+Gui.WOInstr.frmChildCtrl.Zorder(0)
+Gui.WOInstr.frmChildCtrl.Size(5415,9135)
+Gui.WOInstr.frmChildCtrl.Position(75,975)
+Gui.WOInstr.frmChildCtrl.Anchor(7)
+Gui.WOInstr.frmChildCtrl.Caption("")
+Gui.WOInstr.frmChildCtrl.FontName("Tahoma")
+Gui.WOInstr.frmChildCtrl.FontSize(8.25)
+Gui.WOInstr.frmChildCtrl.BorderStyle(0)
+Gui.WOInstr.frmBOM.Create(Frame)
+Gui.WOInstr.frmBOM.Size(5415,7950)
+Gui.WOInstr.frmBOM.Position(0,0)
+Gui.WOInstr.frmBOM.Anchor(13)
+Gui.WOInstr.frmBOM.Enabled(True)
+Gui.WOInstr.frmBOM.Visible(True)
+Gui.WOInstr.frmBOM.Zorder(0)
+Gui.WOInstr.frmBOM.Caption("")
+Gui.WOInstr.frmBOM.FontName("Tahoma")
+Gui.WOInstr.frmBOM.FontSize(8.25)
+Gui.WOInstr.frmBOM.Parent("frmChildCtrl")
+Gui.WOInstr.frmBOM.BorderStyle(0)
+Gui.WOInstr.frmChild4.Create(Frame)
+Gui.WOInstr.frmChild4.Size(5415,795)
+Gui.WOInstr.frmChild4.Position(0,2385)
+Gui.WOInstr.frmChild4.Parent("frmBOM")
+Gui.WOInstr.frmChild4.BorderStyle(0)
+Gui.WOInstr.frmChild4.Enabled(False)
+Gui.WOInstr.frmChild4.Visible(False)
+Gui.WOInstr.frmChild4.Zorder(0)
+Gui.WOInstr.frmChild4.Caption("")
+Gui.WOInstr.frmChild4.FontName("Tahoma")
+Gui.WOInstr.frmChild4.FontSize(8.25)
+Gui.WOInstr.lblQty4.Create(Label,"4",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty4.BorderStyle(0)
+Gui.WOInstr.lblQty4.Parent("frmChild4")
+Gui.WOInstr.lblQty4.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc4.Create(Label,"Child 4 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc4.Parent("frmChild4")
+Gui.WOInstr.lblCDesc4.BorderStyle(0)
+Gui.WOInstr.lblCDesc4.ForeColor(-2147483640)
+Gui.WOInstr.lblChild4.Create(Label,"Child 4",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild4.Parent("frmChild4")
+Gui.WOInstr.lblChild4.BorderStyle(0)
+Gui.WOInstr.lblChild4.ForeColor(-2147483640)
+Gui.WOInstr.frmChild3.Create(Frame)
+Gui.WOInstr.frmChild3.Size(5415,795)
+Gui.WOInstr.frmChild3.Position(0,1590)
+Gui.WOInstr.frmChild3.Parent("frmBOM")
+Gui.WOInstr.frmChild3.BorderStyle(0)
+Gui.WOInstr.frmChild3.Enabled(False)
+Gui.WOInstr.frmChild3.Visible(False)
+Gui.WOInstr.frmChild3.Zorder(0)
+Gui.WOInstr.frmChild3.Caption("")
+Gui.WOInstr.frmChild3.FontName("Tahoma")
+Gui.WOInstr.frmChild3.FontSize(8.25)
+Gui.WOInstr.lblQty3.Create(Label,"3",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty3.BorderStyle(0)
+Gui.WOInstr.lblQty3.Parent("frmChild3")
+Gui.WOInstr.lblQty3.ForeColor(-2147483640)
+Gui.WOInstr.lblChild3.Create(Label,"Child 3",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild3.Parent("frmChild3")
+Gui.WOInstr.lblChild3.BorderStyle(0)
+Gui.WOInstr.lblChild3.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc3.Create(Label,"Child 3 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc3.Parent("frmChild3")
+Gui.WOInstr.lblCDesc3.BorderStyle(0)
+Gui.WOInstr.lblCDesc3.ForeColor(-2147483640)
+Gui.WOInstr.frmChild2.Create(Frame)
+Gui.WOInstr.frmChild2.Size(5415,795)
+Gui.WOInstr.frmChild2.Position(0,795)
+Gui.WOInstr.frmChild2.Parent("frmBOM")
+Gui.WOInstr.frmChild2.BorderStyle(0)
+Gui.WOInstr.frmChild2.Enabled(False)
+Gui.WOInstr.frmChild2.Visible(False)
+Gui.WOInstr.frmChild2.Zorder(0)
+Gui.WOInstr.frmChild2.Caption("")
+Gui.WOInstr.frmChild2.FontName("Tahoma")
+Gui.WOInstr.frmChild2.FontSize(8.25)
+Gui.WOInstr.lblCDesc2.Create(Label,"Child 2 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc2.Parent("frmChild2")
+Gui.WOInstr.lblCDesc2.BorderStyle(0)
+Gui.WOInstr.lblCDesc2.ForeColor(-2147483640)
+Gui.WOInstr.lblQty2.Create(Label,"2",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty2.BorderStyle(0)
+Gui.WOInstr.lblQty2.Parent("frmChild2")
+Gui.WOInstr.lblQty2.ForeColor(-2147483640)
+Gui.WOInstr.lblChild2.Create(Label,"Child 2",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild2.Parent("frmChild2")
+Gui.WOInstr.lblChild2.BorderStyle(0)
+Gui.WOInstr.lblChild2.ForeColor(-2147483640)
+Gui.WOInstr.frmChild7.Create(Frame)
+Gui.WOInstr.frmChild7.Size(5415,795)
+Gui.WOInstr.frmChild7.Position(0,4770)
+Gui.WOInstr.frmChild7.Parent("frmBOM")
+Gui.WOInstr.frmChild7.BorderStyle(0)
+Gui.WOInstr.frmChild7.Enabled(False)
+Gui.WOInstr.frmChild7.Visible(False)
+Gui.WOInstr.frmChild7.Zorder(0)
+Gui.WOInstr.frmChild7.Caption("")
+Gui.WOInstr.frmChild7.FontName("Tahoma")
+Gui.WOInstr.frmChild7.FontSize(8.25)
+Gui.WOInstr.lblCDesc7.Create(Label,"Child 7 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc7.Parent("frmChild7")
+Gui.WOInstr.lblCDesc7.BorderStyle(0)
+Gui.WOInstr.lblCDesc7.ForeColor(-2147483640)
+Gui.WOInstr.lblQty7.Create(Label,"7",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty7.BorderStyle(0)
+Gui.WOInstr.lblQty7.Parent("frmChild7")
+Gui.WOInstr.lblQty7.ForeColor(-2147483640)
+Gui.WOInstr.lblChild7.Create(Label,"Child 7",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild7.Parent("frmChild7")
+Gui.WOInstr.lblChild7.BorderStyle(0)
+Gui.WOInstr.lblChild7.ForeColor(-2147483640)
+Gui.WOInstr.frmChild8.Create(Frame)
+Gui.WOInstr.frmChild8.Size(5415,795)
+Gui.WOInstr.frmChild8.Position(0,5565)
+Gui.WOInstr.frmChild8.Parent("frmBOM")
+Gui.WOInstr.frmChild8.BorderStyle(0)
+Gui.WOInstr.frmChild8.Enabled(False)
+Gui.WOInstr.frmChild8.Visible(False)
+Gui.WOInstr.frmChild8.Zorder(0)
+Gui.WOInstr.frmChild8.Caption("")
+Gui.WOInstr.frmChild8.FontName("Tahoma")
+Gui.WOInstr.frmChild8.FontSize(8.25)
+Gui.WOInstr.lblQty8.Create(Label,"8",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty8.BorderStyle(0)
+Gui.WOInstr.lblQty8.Parent("frmChild8")
+Gui.WOInstr.lblQty8.ForeColor(-2147483640)
+Gui.WOInstr.lblChild8.Create(Label,"Child 8",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild8.Parent("frmChild8")
+Gui.WOInstr.lblChild8.BorderStyle(0)
+Gui.WOInstr.lblChild8.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc8.Create(Label,"Child 8 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc8.Parent("frmChild8")
+Gui.WOInstr.lblCDesc8.BorderStyle(0)
+Gui.WOInstr.lblCDesc8.ForeColor(-2147483640)
+Gui.WOInstr.frmChild1.Create(Frame)
+Gui.WOInstr.frmChild1.Size(5415,795)
+Gui.WOInstr.frmChild1.Position(0,0)
+Gui.WOInstr.frmChild1.Parent("frmBOM")
+Gui.WOInstr.frmChild1.BorderStyle(0)
+Gui.WOInstr.frmChild1.Enabled(False)
+Gui.WOInstr.frmChild1.Visible(False)
+Gui.WOInstr.frmChild1.Zorder(0)
+Gui.WOInstr.frmChild1.Caption("")
+Gui.WOInstr.frmChild1.FontName("Tahoma")
+Gui.WOInstr.frmChild1.FontSize(8.25)
+Gui.WOInstr.lblChild1.Create(Label,"Child 1",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild1.Parent("frmChild1")
+Gui.WOInstr.lblChild1.BorderStyle(0)
+Gui.WOInstr.lblChild1.ForeColor(-2147483640)
+Gui.WOInstr.lblQty1.Create(Label,"1",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty1.BorderStyle(0)
+Gui.WOInstr.lblQty1.Parent("frmChild1")
+Gui.WOInstr.lblQty1.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc1.Create(Label,"Child 1 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc1.Parent("frmChild1")
+Gui.WOInstr.lblCDesc1.BorderStyle(0)
+Gui.WOInstr.lblCDesc1.ForeColor(-2147483640)
+Gui.WOInstr.frmChild9.Create(Frame)
+Gui.WOInstr.frmChild9.Size(5415,795)
+Gui.WOInstr.frmChild9.Position(0,6360)
+Gui.WOInstr.frmChild9.Parent("frmBOM")
+Gui.WOInstr.frmChild9.BorderStyle(0)
+Gui.WOInstr.frmChild9.Enabled(False)
+Gui.WOInstr.frmChild9.Visible(False)
+Gui.WOInstr.frmChild9.Zorder(0)
+Gui.WOInstr.frmChild9.Caption("")
+Gui.WOInstr.frmChild9.FontName("Tahoma")
+Gui.WOInstr.frmChild9.FontSize(8.25)
+Gui.WOInstr.lblQty9.Create(Label,"9",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty9.BorderStyle(0)
+Gui.WOInstr.lblQty9.Parent("frmChild9")
+Gui.WOInstr.lblQty9.ForeColor(-2147483640)
+Gui.WOInstr.lblChild9.Create(Label,"Child 9",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild9.Parent("frmChild9")
+Gui.WOInstr.lblChild9.BorderStyle(0)
+Gui.WOInstr.lblChild9.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc9.Create(Label,"Child 9 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc9.Parent("frmChild9")
+Gui.WOInstr.lblCDesc9.BorderStyle(0)
+Gui.WOInstr.lblCDesc9.ForeColor(-2147483640)
+Gui.WOInstr.frmChild10.Create(Frame)
+Gui.WOInstr.frmChild10.Size(5415,795)
+Gui.WOInstr.frmChild10.Position(0,7155)
+Gui.WOInstr.frmChild10.Parent("frmBOM")
+Gui.WOInstr.frmChild10.BorderStyle(0)
+Gui.WOInstr.frmChild10.Enabled(False)
+Gui.WOInstr.frmChild10.Visible(False)
+Gui.WOInstr.frmChild10.Zorder(0)
+Gui.WOInstr.frmChild10.Caption("")
+Gui.WOInstr.frmChild10.FontName("Tahoma")
+Gui.WOInstr.frmChild10.FontSize(8.25)
+Gui.WOInstr.lblCDesc10.Create(Label,"Child 10 Description",True,1425,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc10.Parent("frmChild10")
+Gui.WOInstr.lblCDesc10.BorderStyle(0)
+Gui.WOInstr.lblCDesc10.ForeColor(-2147483640)
+Gui.WOInstr.lblQty10.Create(Label,"10",True,540,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty10.BorderStyle(0)
+Gui.WOInstr.lblQty10.Parent("frmChild10")
+Gui.WOInstr.lblQty10.ForeColor(-2147483640)
+Gui.WOInstr.lblChild10.Create(Label,"Child 10",True,1140,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild10.Parent("frmChild10")
+Gui.WOInstr.lblChild10.BorderStyle(0)
+Gui.WOInstr.lblChild10.ForeColor(-2147483640)
+Gui.WOInstr.frmChild6.Create(Frame)
+Gui.WOInstr.frmChild6.Size(5415,795)
+Gui.WOInstr.frmChild6.Position(0,3975)
+Gui.WOInstr.frmChild6.Parent("frmBOM")
+Gui.WOInstr.frmChild6.BorderStyle(0)
+Gui.WOInstr.frmChild6.Enabled(False)
+Gui.WOInstr.frmChild6.Visible(False)
+Gui.WOInstr.frmChild6.Zorder(0)
+Gui.WOInstr.frmChild6.Caption("")
+Gui.WOInstr.frmChild6.FontName("Tahoma")
+Gui.WOInstr.frmChild6.FontSize(8.25)
+Gui.WOInstr.lblChild6.Create(Label,"Child 6",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild6.Parent("frmChild6")
+Gui.WOInstr.lblChild6.BorderStyle(0)
+Gui.WOInstr.lblChild6.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc6.Create(Label,"Child 6 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc6.Parent("frmChild6")
+Gui.WOInstr.lblCDesc6.BorderStyle(0)
+Gui.WOInstr.lblCDesc6.ForeColor(-2147483640)
+Gui.WOInstr.lblQty6.Create(Label,"6",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty6.BorderStyle(0)
+Gui.WOInstr.lblQty6.Parent("frmChild6")
+Gui.WOInstr.lblQty6.ForeColor(-2147483640)
+Gui.WOInstr.frmChild5.Create(Frame)
+Gui.WOInstr.frmChild5.Size(5415,795)
+Gui.WOInstr.frmChild5.Position(0,3180)
+Gui.WOInstr.frmChild5.Parent("frmBOM")
+Gui.WOInstr.frmChild5.BorderStyle(0)
+Gui.WOInstr.frmChild5.Enabled(False)
+Gui.WOInstr.frmChild5.Visible(False)
+Gui.WOInstr.frmChild5.Zorder(0)
+Gui.WOInstr.frmChild5.Caption("")
+Gui.WOInstr.frmChild5.FontName("Tahoma")
+Gui.WOInstr.frmChild5.FontSize(8.25)
+Gui.WOInstr.lblQty5.Create(Label,"5",True,270,540,0,0,120,True,0,"Arial",24,-2147483633,0,0)
+Gui.WOInstr.lblQty5.BorderStyle(0)
+Gui.WOInstr.lblQty5.Parent("frmChild5")
+Gui.WOInstr.lblQty5.ForeColor(-2147483640)
+Gui.WOInstr.lblCDesc5.Create(Label,"Child 5 Description",True,1335,210,0,750,525,True,0,"Arial",8,-2147483633,0,0)
+Gui.WOInstr.lblCDesc5.Parent("frmChild5")
+Gui.WOInstr.lblCDesc5.BorderStyle(0)
+Gui.WOInstr.lblCDesc5.ForeColor(-2147483640)
+Gui.WOInstr.lblChild5.Create(Label,"Child 5",True,960,360,0,750,0,True,0,"Arial",16,-2147483633,0,0)
+Gui.WOInstr.lblChild5.Parent("frmChild5")
+Gui.WOInstr.lblChild5.BorderStyle(0)
+Gui.WOInstr.lblChild5.ForeColor(-2147483640)
+Gui.WOInstr.cmdPgUp.Create(Button)
+Gui.WOInstr.cmdPgUp.Enabled(False)
+Gui.WOInstr.cmdPgUp.Visible(False)
+Gui.WOInstr.cmdPgUp.Zorder(0)
+Gui.WOInstr.cmdPgUp.Size(510,510)
+Gui.WOInstr.cmdPgUp.Position(1470,8595)
+Gui.WOInstr.cmdPgUp.Anchor(14)
+Gui.WOInstr.cmdPgUp.Caption("")
+Gui.WOInstr.cmdPgUp.FontName("Tahoma")
+Gui.WOInstr.cmdPgUp.FontSize(16)
+Gui.WOInstr.cmdPgUp.Parent("frmChildCtrl")
+Gui.WOInstr.cmdPgUp.SvgPictureSize(400,400)
+Gui.WOInstr.cmdPgUp.SvgPicture("arrow_circle_up_black")
+Gui.WOInstr.cmdPgUp.Event(Click,cmdPgUp_Click)
+Gui.WOInstr.cmdPgDown.Create(Button)
+Gui.WOInstr.cmdPgDown.Enabled(False)
+Gui.WOInstr.cmdPgDown.Visible(False)
+Gui.WOInstr.cmdPgDown.Zorder(0)
+Gui.WOInstr.cmdPgDown.Size(510,510)
+Gui.WOInstr.cmdPgDown.Position(3450,8595)
+Gui.WOInstr.cmdPgDown.Anchor(14)
+Gui.WOInstr.cmdPgDown.Caption("")
+Gui.WOInstr.cmdPgDown.FontName("Tahoma")
+Gui.WOInstr.cmdPgDown.FontSize(16)
+Gui.WOInstr.cmdPgDown.SvgPicture("arrow_circle_down_black")
+Gui.WOInstr.cmdPgDown.SvgPictureSize(400,400)
+Gui.WOInstr.cmdPgDown.Parent("frmChildCtrl")
+Gui.WOInstr.cmdPgDown.Event(Click,cmdPgDown_Click)
+Gui.WOInstr.cmdNav.Create(Button)
+Gui.WOInstr.cmdNav.Size(2490,465)
+Gui.WOInstr.cmdNav.Position(1470,8070)
+Gui.WOInstr.cmdNav.Parent("frmChildCtrl")
+Gui.WOInstr.cmdNav.Caption("NAVIGATE")
+Gui.WOInstr.cmdNav.FontSize(16)
+Gui.WOInstr.cmdNav.Event(Click,cmdNav_Click)
+Gui.WOInstr.cmdNav.Enabled(False)
+Gui.WOInstr.cmdNav.Visible(False)
+Gui.WOInstr.cmdNav.Zorder(0)
+Gui.WOInstr.cmdNav.FontName("Tahoma")
+Gui.WOInstr.cmdNav.Anchor(14)
+Gui.WOInstr.lblPos.Create(Label,"1/1",False,450,375,0,2490,8670,False,0,"Tahoma",16,,0,0)
+Gui.WOInstr.lblPos.BorderStyle(0)
+Gui.WOInstr.lblPos.Parent("frmChildCtrl")
+Gui.WOInstr.lblPos.Anchor(14)
+Gui.WOInstr.cmdClear.Create(Button)
+Gui.WOInstr.cmdClear.Enabled(True)
+Gui.WOInstr.cmdClear.Visible(True)
+Gui.WOInstr.cmdClear.Zorder(0)
+Gui.WOInstr.cmdClear.Size(3180,810)
+Gui.WOInstr.cmdClear.Position(14655,10080)
+Gui.WOInstr.cmdClear.Caption("CLOSE")
+Gui.WOInstr.cmdClear.FontName("Tahoma")
+Gui.WOInstr.cmdClear.FontSize(36)
+Gui.WOInstr.cmdClear.Event(Click,cmdClear_Click)
+Gui.WOInstr.cmdClear.FontStyle(True,False,False,False,False)
+Gui.WOInstr.cmdClear.Anchor(10)
+Gui.WOInstr.tabDocs.Create(Tab)
+Gui.WOInstr.tabDocs.Enabled(True)
+Gui.WOInstr.tabDocs.Visible(True)
+Gui.WOInstr.tabDocs.Zorder(1)
+Gui.WOInstr.tabDocs.Size(12285,8955)
+Gui.WOInstr.tabDocs.Position(5550,1065)
+Gui.WOInstr.tabDocs.FontName("Tahoma")
+Gui.WOInstr.tabDocs.FontSize(8.25)
+Gui.WOInstr.tabDocs.Anchor(15)
+Gui.WOInstr.tabDocs.Tabs(2)
+Gui.WOInstr.tabDocs.SetTab(0)
+Gui.WOInstr.tabDocs.Caption("Instruction")
+Gui.WOInstr.tabDocs.SetTab(1)
+Gui.WOInstr.tabDocs.Caption("Drawing")
+Gui.WOInstr.frmDocDwg.Create(Frame)
+Gui.WOInstr.frmDocDwg.Enabled(True)
+Gui.WOInstr.frmDocDwg.Visible(True)
+Gui.WOInstr.frmDocDwg.Zorder(0)
+Gui.WOInstr.frmDocDwg.Size(12195,8460)
+Gui.WOInstr.frmDocDwg.Position(0,0)
+Gui.WOInstr.frmDocDwg.Anchor(15)
+Gui.WOInstr.frmDocDwg.Caption("")
+Gui.WOInstr.frmDocDwg.BackColor(-2147483633)
+Gui.WOInstr.frmDocDwg.FontName("Tahoma")
+Gui.WOInstr.frmDocDwg.FontSize(8.25)
+Gui.WOInstr.frmDocDwg.BorderStyle(0)
+Gui.WOInstr.frmDocDwg.Parent("tabDocs",1)
+Gui.WOInstr.htmlDocDwg.Create(GsWebBrowser)
+Gui.WOInstr.htmlDocDwg.Enabled(True)
+Gui.WOInstr.htmlDocDwg.Visible(True)
+Gui.WOInstr.htmlDocDwg.Zorder(0)
+Gui.WOInstr.htmlDocDwg.Size(11970,8355)
+Gui.WOInstr.htmlDocDwg.Position(45,45)
+Gui.WOInstr.htmlDocDwg.Anchor(15)
+Gui.WOInstr.htmlDocDwg.Parent("frmDocDwg")
+Gui.WOInstr.frmDoc.Create(Frame)
+Gui.WOInstr.frmDoc.Size(12195,8460)
+Gui.WOInstr.frmDoc.Position(0,30)
+Gui.WOInstr.frmDoc.Anchor(15)
+Gui.WOInstr.frmDoc.Enabled(True)
+Gui.WOInstr.frmDoc.Visible(True)
+Gui.WOInstr.frmDoc.Zorder(0)
+Gui.WOInstr.frmDoc.Caption("")
+Gui.WOInstr.frmDoc.FontName("Tahoma")
+Gui.WOInstr.frmDoc.FontSize(8.25)
+Gui.WOInstr.frmDoc.BorderStyle(0)
+Gui.WOInstr.frmDoc.BackColor(-2147483633)
+Gui.WOInstr.frmDoc.Parent("tabDocs",0)
+Gui.WOInstr.htmlDoc.Create(GsWebBrowser)
+Gui.WOInstr.htmlDoc.Size(12030,8355)
+Gui.WOInstr.htmlDoc.Position(45,45)
+Gui.WOInstr.htmlDoc.Parent("frmDoc")
+Gui.WOInstr.htmlDoc.Anchor(15)
+Gui.WOInstr.htmlDoc.Visible(True)
+Gui.WOInstr.htmlDoc.Zorder(0)
+Gui.WOInstr.htmlDoc.Enabled(True)
+Gui.WOInstr.frmWarning.Create(Frame)
+Gui.WOInstr.frmWarning.Enabled(False)
+Gui.WOInstr.frmWarning.Visible(False)
+Gui.WOInstr.frmWarning.Zorder(0)
+Gui.WOInstr.frmWarning.Size(11985,945)
+Gui.WOInstr.frmWarning.Position(5700,8940)
+Gui.WOInstr.frmWarning.Caption("")
+Gui.WOInstr.frmWarning.FontName("Tahoma")
+Gui.WOInstr.frmWarning.FontSize(8.25)
+Gui.WOInstr.frmWarning.BackColor(-2147483633)
+Gui.WOInstr.frmWarning.Anchor(14)
+Gui.WOInstr.lblWarning.Create(Label,"!!! WARNING !!! Document Version has changes since last viewed!",True,11775,495,0,180,225,True,0,"Tahoma",20,,0,0)
+Gui.WOInstr.lblWarning.BorderStyle(0)
+Gui.WOInstr.lblWarning.Parent("frmWarning")
+Gui.WOInstr.lblWarning.Anchor(3)
+Gui.AlertAuth..Create(BaseForm)
+Gui.AlertAuth..Caption("Authorization Required")
+Gui.AlertAuth..Size(4905,1830)
+Gui.AlertAuth..MinX(0)
+Gui.AlertAuth..MinY(0)
+Gui.AlertAuth..Position(0,0)
+Gui.AlertAuth..AlwaysOnTop(True)
+Gui.AlertAuth..FontName("Tahoma")
+Gui.AlertAuth..FontSize(8.25)
+Gui.AlertAuth..ControlBox(True)
+Gui.AlertAuth..MaxButton(False)
+Gui.AlertAuth..MinButton(False)
+Gui.AlertAuth..MousePointer(0)
+Gui.AlertAuth..Moveable(True)
+Gui.AlertAuth..Sizeable(False)
+Gui.AlertAuth..ShowInTaskBar(True)
+Gui.AlertAuth..TitleBar(True)
+Gui.AlertAuth..Event(UnLoad,AlertAuth_UnLoad)
+Gui.AlertAuth.lblAuth.Create(Label,"Please scan employee badge for authorization.",True,3375,195,0,285,480,True,0,"Tahoma",8.25,,0,0)
+Gui.AlertAuth.lblAuth.BorderStyle(0)
+Gui.AlertAuth.txtAuth.Create(TextBox,"",True,4305,300,0,285,765,True,0,"Tahoma",8.25,,1)
+Gui.AlertAuth.txtAuth.Event(KeyPressEnter,txtAuth_KeyPressEnter)
+Gui.AlertAuth.lblAlert.Create(Label,"Label",True,375,195,0,285,165,True,0,"Tahoma",8.25,,0,0)
+Gui.AlertAuth.lblAlert.BorderStyle(0)
+Gui.ScanCount..Create(BaseForm)
+Gui.ScanCount..Caption("Enter Team Size")
+Gui.ScanCount..Size(4005,2115)
+Gui.ScanCount..MinX(0)
+Gui.ScanCount..MinY(0)
+Gui.ScanCount..Position(0,0)
+Gui.ScanCount..AlwaysOnTop(True)
+Gui.ScanCount..FontName("Tahoma")
+Gui.ScanCount..FontSize(8.25)
+Gui.ScanCount..ControlBox(False)
+Gui.ScanCount..MaxButton(False)
+Gui.ScanCount..MinButton(False)
+Gui.ScanCount..MousePointer(0)
+Gui.ScanCount..Moveable(False)
+Gui.ScanCount..Sizeable(False)
+Gui.ScanCount..ShowInTaskBar(True)
+Gui.ScanCount..TitleBar(True)
+Gui.ScanCount..Event(UnLoad,ScanCount_UnLoad)
+Gui.ScanCount.lblScanCount.Create(Label,"1",True,465,870,0,495,465,True,0,"Tahoma",36,,0,0)
+Gui.ScanCount.lblScanCount.BorderStyle(0)
+Gui.ScanCount.lblScanCount.FontStyle(True,False,False,False,False)
+Gui.ScanCount.cmdScanUp.Create(Button)
+Gui.ScanCount.cmdScanUp.Enabled(True)
+Gui.ScanCount.cmdScanUp.Visible(True)
+Gui.ScanCount.cmdScanUp.Zorder(0)
+Gui.ScanCount.cmdScanUp.Size(705,705)
+Gui.ScanCount.cmdScanUp.Position(1545,195)
+Gui.ScanCount.cmdScanUp.Caption("")
+Gui.ScanCount.cmdScanUp.FontName("Tahoma")
+Gui.ScanCount.cmdScanUp.FontSize(8.25)
+Gui.ScanCount.cmdScanUp.SvgPicture("arrow_circle_up_black")
+Gui.ScanCount.cmdScanUp.SvgPictureSize(600,600)
+Gui.ScanCount.cmdScanUp.Event(Click,cmdScanUp_Click)
+Gui.ScanCount.cmdScanDown.Create(Button)
+Gui.ScanCount.cmdScanDown.Enabled(True)
+Gui.ScanCount.cmdScanDown.Visible(True)
+Gui.ScanCount.cmdScanDown.Zorder(0)
+Gui.ScanCount.cmdScanDown.Size(705,705)
+Gui.ScanCount.cmdScanDown.Position(1545,990)
+Gui.ScanCount.cmdScanDown.Caption("")
+Gui.ScanCount.cmdScanDown.FontName("Tahoma")
+Gui.ScanCount.cmdScanDown.FontSize(8.25)
+Gui.ScanCount.cmdScanDown.SvgPicture("arrow_circle_down_black")
+Gui.ScanCount.cmdScanDown.SvgPictureSize(600,600)
+Gui.ScanCount.cmdScanDown.Event(Click,cmdScanDown_Click)
+Gui.ScanCount.cmdScanOk.Create(Button)
+Gui.ScanCount.cmdScanOk.Enabled(True)
+Gui.ScanCount.cmdScanOk.Visible(True)
+Gui.ScanCount.cmdScanOk.Zorder(0)
+Gui.ScanCount.cmdScanOk.Size(1005,1005)
+Gui.ScanCount.cmdScanOk.Position(2745,390)
+Gui.ScanCount.cmdScanOk.Caption("")
+Gui.ScanCount.cmdScanOk.FontName("Tahoma")
+Gui.ScanCount.cmdScanOk.FontSize(8.25)
+Gui.ScanCount.cmdScanOk.SvgPictureSize(900,900)
+Gui.ScanCount.cmdScanOk.SvgPicture("icon_check_color")
+Gui.ScanCount.cmdScanOk.Event(Click,cmdScanOk_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.ScreenSU_Portrait.Start
+Gui.WOInstr.frmDoc.Size(16170,8145)
+Gui.WOInstr.frmDoc.Position(75,1845)
+Gui.WOInstr.htmlDoc.Size(16070,8040)
+Gui.WOInstr.htmlDoc.Position(45,45)
+Gui.WOInstr.frmChildCtrl.Size(16170,1590)
+Gui.WOInstr.frmChildCtrl.Position(75,975)
+Gui.WOInstr.frmChildCtrl.Anchor(13)
+Gui.WOInstr.frmBOM.Size(14805,1590)
+Gui.WOInstr.frmBOM.Anchor(5)
+Gui.WOInstr.frmChild1.Position(0,0)
+Gui.WOInstr.frmChild2.Position(3705,0)
+Gui.WOInstr.frmChild3.Position(7410,0)
+Gui.WOInstr.frmChild4.Position(11115,0)
+Gui.WOInstr.frmChild5.Position(0,795)
+Gui.WOInstr.frmChild6.Position(3705,795)
+Gui.WOInstr.frmChild7.Position(7410,795)
+Gui.WOInstr.frmChild8.Position(11115,795)
+'Gui.WOInstr.frmChild9.Position(0,6360)
+'Gui.WOInstr.frmChild10.Position(0,7155)
+Gui.WOInstr.cmdPgUp.Position(14940,225)
+Gui.WOInstr.cmdPgUp.Anchor(9)
+Gui.WOInstr.cmdPgDown.Position(15540,225)
+Gui.WOInstr.cmdPgDown.Anchor(9)
+'Gui.WOInstr.cmdNav.Size(750,465)
+'Gui.WOInstr.cmdNav.Position(13200,0)
+'Gui.WOInstr.cmdNav.Caption("NAV")
+'Gui.WOInstr.cmdNav.FontSize(16)
+gui.WOInstr.lblPos.Position(15225,990)
+Gui.WOInstr.lblPos.Anchor(9)
+Program.Sub.ScreenSU_Portrait.End
+
+Program.Sub.Preflight.Start
+v.Global.sJob.Declare
+v.Global.sSuffix.Declare
+v.Global.sParent.Declare
+v.Global.sPID.Declare
+v.Global.sIPM.Declare
+v.Global.sScreen.Declare
+v.Global.sDoc.Declare
+v.Global.sDrw.Declare
+v.Global.sAlert.Declare
+v.Global.iAlertNo.Declare
+v.Global.sEmpID.Declare
+v.Global.sEmpName.Declare
+v.Global.iScan.Declare
+v.Global.iScanCount.Declare
+v.Global.iScanCount.Set(9999)
+v.Global.sVersion.Declare
+v.Global.sDateDoc.Declare
+v.Global.iGrpInstr.Declare
+v.Global.iGrpDrw.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+
+v.Local.sScan.Declare
+
+gui.WOInstr.tabDocs.SetTab(0)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.ODBC.Connection!conx.ExecuteandReturn("Select GRP_ID from ATG_DOC_GRP where GRP_NAME like '%Drawing%' or GRP_NAME like '%DWG%'",v.Global.iGrpDrw)
+f.ODBC.Connection!conx.ExecuteandReturn("Select GRP_ID from ATG_DOC_GRP where GRP_NAME like '%Work Instr%' or GRP_NAME like '%WORK INSTR%'",v.Global.iGrpInstr)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Ambient.ScreenHeight,<,v.Ambient.ScreenWidth)
+	v.Global.sScreen.Set("L")
+f.Intrinsic.Control.Else
+	v.Global.sScreen.Set("P")
+	f.Intrinsic.Control.CallSub(ScreenSU_Portrait)
+f.Intrinsic.Control.EndIf
+
+gui.WOInstr.lblParent.Caption("Waiting for Job Scan...")
+Gui.WOInstr.frmControl.BackColor("Fuchsia")
+gui.WOInstr.frmWarning.BackColor("Yellow")
+
+f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+
+	f.Intrinsic.Control.Case("15710")
+	v.Passed.000021.Set("WO Instr.")
+	f.Intrinsic.Control.End
+	
+	f.Intrinsic.Control.Case("49710")
+	V.Passed.MainFormView-windowsUIButtonPanel-1.Set("WO Instr.|~|Script2|~|Script1")
+	F.Intrinsic.Control.End
+	
+	f.Intrinsic.Control.Case("15780")
+	f.Intrinsic.Control.If(v.Passed.009993,<>,"")
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+		v.Global.sJob.Set(v.Passed.009990)
+		v.Global.sSuffix.Set(v.Passed.009991)
+	f.Intrinsic.Control.EndIf
+	
+'	f.Intrinsic.Control.If(v.Global.sJob,<>,"")
+'		f.Intrinsic.String.Build("{0}{1}",v.Global.sJob,v.Global.sSuffix,v.Local.sScan)
+'		gui.WOInstr.txtScan.Text(v.Local.sScan)
+'		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)	
+'	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.Case("15951")
+	f.Intrinsic.Control.If(v.Passed.009993,<>,"")
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+		v.Global.sJob.Set(v.Passed.009990)
+		v.Global.sSuffix.Set(v.Passed.009991)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.sJob,<>,"")
+		f.Intrinsic.String.Build("{0}{1}",v.Global.sJob,v.Global.sSuffix,v.Local.sScan)
+		gui.WOInstr.txtScan.Text(v.Local.sScan)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)	
+	f.Intrinsic.Control.EndIf
+		
+f.Intrinsic.Control.EndSelect
+
+gui.WOInstr..Visible(true)
+
+gui.WOInstr.lblPos.Visible(true)
+
+f.Intrinsic.Control.CallSub(PID_Check)
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.WOInstr_UnLoad.Start
+v.Local.bRet.Declare
+
+f.Intrinsic.File.Exists(v.Global.sPID,v.Local.bRet)
+
+f.Intrinsic.Control.If(v.Local.bRet,=,True)
+	f.Intrinsic.File.DeleteFile(v.Global.sPID)
+f.Intrinsic.Control.EndIf
+
+gui.WOInstr..Visible(false)
+f.Intrinsic.Control.End
+Program.Sub.WOInstr_UnLoad.End
+
+Program.Sub.txtParent_KeyPressEnter.Start
+v.Local.iLen.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.Global.sEmpID,=,"")
+	f.Intrinsic.UI.Inputbox("ERROR!","Please scan employee badge before selecting Job.","",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,=,"",or,v.Local.sRet,=,"***CANCEL***")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		v.Global.sEmpID.Set(v.Local.sRet)
+		f.Intrinsic.String.Replace(v.Global.sEmpID,"%$","",v.Global.sEmpID)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Global.iScan,=,0)
+	f.Intrinsic.Control.CallSub(Scan_Team)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Global.iScan,=,v.Global.iScanCount)
+
+	f.Intrinsic.String.Len(v.Screen.WOInstr!txtScan.Text,v.Local.iLen)
+	
+	f.Intrinsic.Control.If(v.Local.iLen,>,6)
+		f.Intrinsic.String.Left(v.Screen.WOInstr!txtScan.Text,6,v.Global.sJob)
+		f.Intrinsic.String.Right(v.Screen.WOInstr!txtScan.Text,3,v.Global.sSuffix)
+	f.Intrinsic.Control.Else
+		v.Global.sJob.Set(v.Screen.WOInstr!txtScan.Text)
+		v.Global.sSuffix.Set("000")
+	f.Intrinsic.Control.EndIf
+	
+	gui.WOInstr..Enabled(false)
+	
+	f.Intrinsic.Control.If(v.Screen.WOInstr!txtScan.Text,<>,"")
+	
+		f.Intrinsic.Control.CallSub(Load_WO)
+		
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndIf
+
+Gui.WOInstr..AlwaysOnTop(True)
+Program.Sub.txtParent_KeyPressEnter.End
+
+Program.Sub.Load_WO.Start
+v.Local.sJobSuf.Declare
+v.Local.sJobCap.Declare
+v.Local.sPartCap.Declare
+v.Local.sDescCap.Declare
+v.Local.sDateCap.Declare
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.Global.sSuffix,<>,"")
+	f.Intrinsic.String.Build("{0}-{1}",v.Global.sJob,v.Global.sSuffix,v.Local.sJobSuf)
+f.Intrinsic.Control.Else
+	v.Local.sJobSuf.Set(v.Global.sJob)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Work Order: {0}",v.Local.sJobSuf,v.Local.sJobCap)
+gui.WOInstr.lblJob.Caption(v.Local.sJobCap)
+gui.WOInstr.lblJob.Visible(true)
+gui.WOInstr.lblJob.Enabled(true)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select rtrim(PART) as PART, rtrim(DESCRIPTION) as DESCRIPTION, DATE_DUE, cast(QTY_ORDER as int) as QTY_ORDER from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+v.Global.sParent.Set(v.Local.sRet(0))
+
+f.Intrinsic.String.Build("Part: {0}",v.Global.sParent,v.Local.sPartCap)
+gui.WOInstr.lblParent.Caption(v.Local.sPartCap)
+
+f.Intrinsic.String.Build("Description: {0}",v.Local.sRet(1),v.Local.sDescCap)
+gui.WOInstr.lblPDesc.Caption(v.Local.sDescCap)
+gui.WOInstr.lblPDesc.Visible(true)
+gui.WOInstr.lblPDesc.Enabled(true)
+
+f.Intrinsic.String.Build("Date Due: {0}",v.Local.sRet(2),v.Local.sDateCap)
+gui.WOInstr.lblDueDate.Caption(v.Local.sDateCap)
+gui.WOInstr.lblDueDate.Visible(true)
+gui.WOInstr.lblDueDate.Enabled(true)
+
+f.Intrinsic.Control.CallSub(Load_BOM)
+f.Intrinsic.Control.CallSub(Load_Alert)
+f.Intrinsic.Control.CallSub(cmdNav_Click)
+
+gui.WOInstr..Enabled(true)
+
+gui.WOInstr.txtScan.Enabled(false)
+Program.Sub.Load_WO.End
+
+Program.Sub.Load_BOM.Start
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sChild.Declare
+v.Local.sPosCap.Declare
+v.Local.iPos.Declare
+v.Local.iPosStrt.Declare
+v.Local.iPosStop.Declare
+v.Local.fPosEnd.Declare
+v.Local.i.Declare
+v.Local.sBOMFlag.Declare
+
+f.Intrinsic.Control.If(v.DataTable.dtChild.Exists,=,True)
+	f.Data.Datatable.Close("dtChild")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("select PARENT from V_BOM_MSTR where PARENT = '{0}'",v.Global.sParent,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sBOMFlag)
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+	f.Intrinsic.String.Build("Select x.PART, y.DESCRIPTION, cast(x.QUANTITY as int) as QTY from V_BOM_MSTR as x left join V_INVENTORY_MSTR as y on y.PART = x.PART where PARENT = '{0}' and SEQUENCE_BOM <> '000000' order by SEQUENCE_BOM ASC","XXXXXXXXXXXXXXXXXX",v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtChild","conx",v.Local.sSQL,true)
+	f.Data.Datatable.AddColumn("dtChild","FLAG","string")
+	f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.CallSub(Explode_Bom)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("Select PART, DESCRIPTION,  HOURS_ESTIMATED as QTY, rtrim(' ') as FLAG from V_JOB_OPERATIONS where JOB = '{0}' and SUFFIX = '{1}' and LMO = 'M' and SEQ not like '99%'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtChild","conx",v.Local.sSQL,true)
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.CallSub(Version_Check)
+
+f.Intrinsic.Math.Div(v.DataTable.dtChild.RowCount,10,v.Local.fPosEnd)
+f.Intrinsic.Math.Ceiling(v.Local.fPosEnd,v.Local.fPosEnd)
+
+f.Intrinsic.String.Build("1/{0}",v.Local.fPosEnd,v.Local.sPosCap)
+gui.WOInstr.lblPos.Caption(v.Local.sPosCap)
+f.Intrinsic.String.Split(v.Screen.WOInstr!lblPos.Caption,"/",v.Local.iPos)
+
+gui.WOInstr.cmdNav.Visible(true)
+gui.WOInstr.cmdNav.Enabled(true)
+gui.WOInstr.lblPos.Visible(true)
+gui.WOInstr.lblPos.Enabled(true)
+
+f.Intrinsic.Control.If(v.Local.iPos(0),=,1)
+	gui.WOInstr.cmdPgUp.Enabled(false)
+	gui.WOInstr.cmdPgUp.Visible(false)
+f.Intrinsic.Control.Else
+	gui.WOInstr.cmdPgUp.Enabled(true)
+	gui.WOInstr.cmdPgUp.Visible(true)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.iPos(1),=,1)
+	gui.WOInstr.cmdPgDown.Enabled(false)
+	gui.WOInstr.cmdPgDown.Visible(false)
+f.Intrinsic.Control.Else
+	gui.WOInstr.cmdPgDown.Enabled(true)
+	gui.WOInstr.cmdPgDown.Visible(true)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+
+f.Intrinsic.Control.Case("L")
+	f.Intrinsic.Math.Mult(v.Local.iPos,10,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,10,v.Local.iPosStrt)
+	
+f.Intrinsic.Control.Case("P")
+	f.Intrinsic.Math.Mult(v.Local.iPos,8,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,8,v.Local.iPosStrt)
+	
+f.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.If(v.Local.iPosStop,>,v.DataTable.dtChild.RowCount--)
+	v.Local.iPosStop.Set(v.DataTable.dtChild.RowCount--)
+f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Sub(v.Local.iPosStop,1,v.Local.iPosStop)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.For(v.Local.i,v.Local.iPosStrt,v.Local.iPosStop,1)
+	f.Intrinsic.String.Build("{0}{1}*!*{2}*!*{3}*!*{4}*!*",v.Local.sChild,v.DataTable.dtChild(v.Local.i).PART!FieldValTrim,v.DataTable.dtChild(v.Local.i).DESCRIPTION!FieldValTrim,v.DataTable.dtChild(v.Local.i).QTY!FieldVal,v.DataTable.dtChild(v.Local.i).FLAG!FieldVal,v.Local.sChild)
+f.Intrinsic.Control.Next(v.Local.i)
+
+f.Intrinsic.String.Split(v.Local.sChild,"*!*",v.Local.sChild)
+
+f.Intrinsic.Control.If(v.Local.sChild(0),<>,"OOB",and,v.Local.sChild(0),<>,"")
+
+gui.WOInstr.lblChild1.Caption(v.Local.sChild(0))
+gui.WOInstr.lblCDesc1.Caption(v.Local.sChild(1))
+gui.WOInstr.lblQty1.Caption(v.Local.sChild(2))
+gui.WOInstr.frmChild1.Enabled(true)
+gui.WOInstr.frmChild1.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(3),=,"Y")
+	Gui.WOInstr.frmChild1.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(3),=,"N")
+	Gui.WOInstr.frmChild1.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild1.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild1.Caption("")
+gui.WOInstr.lblCDesc1.Caption("")
+gui.WOInstr.lblQty1.Caption("")
+gui.WOInstr.frmChild1.Enabled(false)
+gui.WOInstr.frmChild1.Visible(false)
+Gui.WOInstr.frmChild1.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(4),<>,"OOB",and,v.Local.sChild(4),<>,"")	
+
+gui.WOInstr.lblChild2.Caption(v.Local.sChild(4))
+gui.WOInstr.lblCDesc2.Caption(v.Local.sChild(5))
+gui.WOInstr.lblQty2.Caption(v.Local.sChild(6))
+gui.WOInstr.frmChild2.Enabled(true)
+gui.WOInstr.frmChild2.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(7),=,"Y")
+	Gui.WOInstr.frmChild2.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(7),=,"N")
+	Gui.WOInstr.frmChild2.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild2.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild2.Caption("")
+gui.WOInstr.lblCDesc2.Caption("")
+gui.WOInstr.lblQty2.Caption("")
+gui.WOInstr.frmChild2.Enabled(false)
+gui.WOInstr.frmChild2.Visible(false)
+Gui.WOInstr.frmChild2.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(8),<>,"OOB",and,v.Local.sChild(8),<>,"")	
+
+gui.WOInstr.lblChild3.Caption(v.Local.sChild(8))
+gui.WOInstr.lblCDesc3.Caption(v.Local.sChild(9))
+gui.WOInstr.lblQty3.Caption(v.Local.sChild(10))
+gui.WOInstr.frmChild3.Enabled(true)
+gui.WOInstr.frmChild3.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(11),=,"Y")
+	Gui.WOInstr.frmChild3.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(11),=,"N")
+	Gui.WOInstr.frmChild3.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild3.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild3.Caption("")
+gui.WOInstr.lblCDesc3.Caption("")
+gui.WOInstr.lblQty3.Caption("")
+gui.WOInstr.frmChild3.Enabled(false)
+gui.WOInstr.frmChild3.Visible(false)
+Gui.WOInstr.frmChild3.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(12),<>,"OOB",and,v.Local.sChild(12),<>,"")	
+
+gui.WOInstr.lblChild4.Caption(v.Local.sChild(12))
+gui.WOInstr.lblCDesc4.Caption(v.Local.sChild(13))
+gui.WOInstr.lblQty4.Caption(v.Local.sChild(14))
+gui.WOInstr.frmChild4.Enabled(true)
+gui.WOInstr.frmChild4.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(15),=,"Y")
+	Gui.WOInstr.frmChild4.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(15),=,"N")
+	Gui.WOInstr.frmChild4.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild4.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild4.Caption("")
+gui.WOInstr.lblCDesc4.Caption("")
+gui.WOInstr.lblQty4.Caption("")
+gui.WOInstr.frmChild4.Enabled(false)
+gui.WOInstr.frmChild4.Visible(false)
+Gui.WOInstr.frmChild4.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(16),<>,"OOB",and,v.Local.sChild(16),<>,"")
+
+gui.WOInstr.lblChild5.Caption(v.Local.sChild(16))
+gui.WOInstr.lblCDesc5.Caption(v.Local.sChild(17))
+gui.WOInstr.lblQty5.Caption(v.Local.sChild(18))
+gui.WOInstr.frmChild5.Enabled(true)
+gui.WOInstr.frmChild5.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(19),=,"Y")
+	Gui.WOInstr.frmChild5.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(19),=,"N")
+	Gui.WOInstr.frmChild5.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild5.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild5.Caption("")
+gui.WOInstr.lblCDesc5.Caption("")
+gui.WOInstr.lblQty5.Caption("")
+gui.WOInstr.frmChild5.Enabled(false)
+gui.WOInstr.frmChild5.Visible(false)
+Gui.WOInstr.frmChild5.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+
+f.Intrinsic.Control.Case("L")
+
+f.Intrinsic.Control.If(v.Local.sChild(20),<>,"OOB",and,v.Local.sChild(20),<>,"")
+
+gui.WOInstr.lblChild6.Caption(v.Local.sChild(20))
+gui.WOInstr.lblCDesc6.Caption(v.Local.sChild(21))
+gui.WOInstr.lblQty6.Caption(v.Local.sChild(22))
+gui.WOInstr.frmChild6.Enabled(true)
+gui.WOInstr.frmChild6.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(23),=,"Y")
+	Gui.WOInstr.frmChild6.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(23),=,"N")
+	Gui.WOInstr.frmChild6.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild6.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild6.Caption("")
+gui.WOInstr.lblCDesc6.Caption("")
+gui.WOInstr.lblQty6.Caption("")
+gui.WOInstr.frmChild6.Enabled(false)
+gui.WOInstr.frmChild6.Visible(false)
+Gui.WOInstr.frmChild6.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(24),<>,"OOB",and,v.Local.sChild(24),<>,"")
+
+gui.WOInstr.lblChild7.Caption(v.Local.sChild(24))
+gui.WOInstr.lblCDesc7.Caption(v.Local.sChild(25))
+gui.WOInstr.lblQty7.Caption(v.Local.sChild(26))
+gui.WOInstr.frmChild7.Enabled(true)
+gui.WOInstr.frmChild7.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(27),=,"Y")
+	Gui.WOInstr.frmChild7.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(27),=,"N")
+	Gui.WOInstr.frmChild7.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild7.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild7.Caption("")
+gui.WOInstr.lblCDesc7.Caption("")
+gui.WOInstr.lblQty7.Caption("")
+gui.WOInstr.frmChild7.Enabled(false)
+gui.WOInstr.frmChild7.Visible(false)
+Gui.WOInstr.frmChild7.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(28),<>,"OOB",and,v.Local.sChild(28),<>,"")
+
+gui.WOInstr.lblChild8.Caption(v.Local.sChild(28))
+gui.WOInstr.lblCDesc8.Caption(v.Local.sChild(29))
+gui.WOInstr.lblQty8.Caption(v.Local.sChild(30))
+gui.WOInstr.frmChild8.Enabled(true)
+gui.WOInstr.frmChild8.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(31),=,"Y")
+	Gui.WOInstr.frmChild8.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(31),=,"N")
+	Gui.WOInstr.frmChild8.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild8.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild8.Caption("")
+gui.WOInstr.lblCDesc8.Caption("")
+gui.WOInstr.lblQty8.Caption("")
+gui.WOInstr.frmChild8.Enabled(false)
+gui.WOInstr.frmChild8.Visible(false)
+Gui.WOInstr.frmChild8.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(32),<>,"OOB",and,v.Local.sChild(32),<>,"")
+
+gui.WOInstr.lblChild9.Caption(v.Local.sChild(32))
+gui.WOInstr.lblCDesc9.Caption(v.Local.sChild(23))
+gui.WOInstr.lblQty9.Caption(v.Local.sChild(34))
+gui.WOInstr.frmChild9.Enabled(true)
+gui.WOInstr.frmChild9.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(35),=,"Y")
+	Gui.WOInstr.frmChild9.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(35),=,"N")
+	Gui.WOInstr.frmChild9.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild9.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild9.Caption("")
+gui.WOInstr.lblCDesc9.Caption("")
+gui.WOInstr.lblQty9.Caption("")
+gui.WOInstr.frmChild9.Enabled(false)
+gui.WOInstr.frmChild9.Visible(false)
+Gui.WOInstr.frmChild9.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(36),<>,"OOB",and,v.Local.sChild(36),<>,"")
+
+gui.WOInstr.lblChild10.Caption(v.Local.sChild(36))
+gui.WOInstr.lblCDesc10.Caption(v.Local.sChild(37))
+gui.WOInstr.lblQty10.Caption(v.Local.sChild(38))
+gui.WOInstr.frmChild10.Enabled(true)
+gui.WOInstr.frmChild10.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(39),=,"Y")
+	Gui.WOInstr.frmChild10.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(39),=,"N")
+	Gui.WOInstr.frmChild10.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild10.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild10.Caption("")
+gui.WOInstr.lblCDesc10.Caption("")
+gui.WOInstr.lblQty10.Caption("")
+gui.WOInstr.frmChild10.Enabled(false)
+gui.WOInstr.frmChild10.Visible(false)
+Gui.WOInstr.frmChild10.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndSelect
+Program.Sub.Load_BOM.End
+
+Program.Sub.cmdNav_Click.Start
+'f.Intrinsic.Control.Try
+
+v.Local.sSQL.Declare
+v.Local.sDocCheck.Declare
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+'f.Intrinsic.String.Build("select y.FILE from LINK_DATA as x left join ATG_DOC_ASSOC as y on y.LINK_ID = cast(x.LINK_ID as int) where x.TYPE = '00030' and y.FILE_TYPE = 'HTTP' and x.ID = '{0}' and y.GRP_ID = '{1}'",v.Global.sParent,v.Global.iGrpInstr,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.sDoc)
+
+f.Intrinsic.String.Build("select cast(LINK_ID as int) as LINK_ID, rtrim(ID) as PART from LINK_DATA where TYPE = '00030' and ID = '{0}'",v.Global.sParent,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtLD","conx",v.Local.sSQL,true)
+f.Intrinsic.String.Build("Select LINK_ID, rtrim(FILE) as FILE from ATG_DOC_ASSOC where FILE_TYPE = 'HTTP' and GRP_ID = '{0}'",v.Global.iGrpInstr,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtADA","conx",v.Local.sSQL,true)
+f.Data.Linq.Join("leftjoin","datatable","dtLD*!*A","datatable","dtADA*!*B","A.LINK_ID=B.LINK_ID","A.PART*!*B.FILE","","","","dtJoin",True)
+
+f.Intrinsic.Control.If(v.DataTable.dtJoin.RowCount,<>,0)
+
+	v.Global.sDoc.Set(v.DataTable.dtJoin(0).FILE!FieldValTrim)
+	
+f.Intrinsic.Control.Else
+
+	v.Global.sDoc.Set("")
+
+f.Intrinsic.Control.EndIf
+
+f.Data.Datatable.Close("dtLD")
+f.Data.Datatable.Close("dtADA")
+f.Data.Datatable.Close("dtJoin")
+
+f.Intrinsic.Control.If(v.Global.sDoc,<>,"")
+	gui.WOInstr.tabDocs.TabVisible(0,True)
+	gui.WOInstr.htmlDoc.LoadURL(v.Global.sDoc)
+f.Intrinsic.Control.Else
+	gui.WOInstr.tabDocs.TabVisible(0,False)
+f.Intrinsic.Control.EndIf
+
+'f.Intrinsic.String.Build("select y.FILE from LINK_DATA as x left join ATG_DOC_ASSOC as y on y.LINK_ID = cast(x.LINK_ID as int) where x.TYPE = '00030' and y.FILE_TYPE = 'HTTP' and x.ID = '{0}' and y.GRP_ID = '{1}'",v.Global.sParent,v.Global.iGrpDrw,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.sDrw)
+
+f.Intrinsic.String.Build("select cast(LINK_ID as int) as LINK_ID, rtrim(ID) as PART from LINK_DATA where TYPE = '00030' and ID = '{0}'",v.Global.sParent,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtLD","conx",v.Local.sSQL,true)
+f.Intrinsic.String.Build("Select LINK_ID, rtrim(FILE) as FILE from ATG_DOC_ASSOC where FILE_TYPE = 'HTTP' and GRP_ID = '{0}'",v.Global.iGrpDrw,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtADA","conx",v.Local.sSQL,true)
+f.Data.Linq.Join("leftjoin","datatable","dtLD*!*A","datatable","dtADA*!*B","A.LINK_ID=B.LINK_ID","A.PART*!*B.FILE","","","","dtJoin",True)
+
+f.Intrinsic.Control.If(v.DataTable.dtJoin.RowCount,<>,0)
+
+	v.Global.sDrw.Set(v.DataTable.dtJoin(0).FILE!FieldValTrim)
+
+f.Intrinsic.Control.Else
+
+	v.Global.sDrw.Set("")
+	
+f.Intrinsic.Control.EndIf
+
+f.Data.Datatable.Close("dtLD")
+f.Data.Datatable.Close("dtADA")
+f.Data.Datatable.Close("dtJoin")
+
+f.Intrinsic.Control.If(v.Global.sDrw,<>,"")
+	gui.WOInstr.tabDocs.TabVisible(1,True)
+	gui.WOInstr.htmlDocDwg.LoadURL(v.Global.sDrw)
+f.Intrinsic.Control.Else
+	gui.WOInstr.tabDocs.TabVisible(1,False)
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.String.Build("{0}{1}",v.Global.sDoc,v.Global.sDrw,v.Local.sDocCheck)
+
+f.Intrinsic.Control.If(v.Local.sDocCheck,=,"")
+	f.Intrinsic.UI.Msgbox("There are no documents for this job.","ERROR!")
+	gui.WOInstr.htmlDoc.Visible(false)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.WOInstr.htmlDoc.Visible(true)
+'f.Intrinsic.Control.Catch
+'f.Intrinsic.Control.EndTry
+Program.Sub.cmdNav_Click.End
+
+Program.Sub.cmdPgUp_Click.Start
+v.Local.sPosCap.Declare
+v.Local.iRet.Declare
+v.Local.sSOInfo.Declare
+v.Local.sChild.Declare
+v.Local.iPos.Declare
+v.Local.iPosStrt.Declare
+v.Local.iPosStop.Declare
+v.Local.fPosEnd.Declare
+v.Local.i.Declare
+
+f.Intrinsic.String.Split(v.Screen.WOInstr!lblPos.Caption,"/",v.Local.iRet)
+f.Intrinsic.Math.Sub(v.Local.iRet(0),1,v.Local.iPos)
+
+f.Intrinsic.Control.If(v.Local.iPos,<=,v.Local.iRet(1))
+
+	f.Intrinsic.String.Build("{0}/{1}",v.Local.iPos,v.Local.iRet(1),v.Local.sPosCap)
+	gui.WOInstr.lblPos.Caption(v.Local.sPosCap)
+	
+	f.Intrinsic.Control.If(v.Local.iPos,=,1)
+		gui.WOInstr.cmdPgUp.Enabled(false)
+		gui.WOInstr.cmdPgUp.Visible(false)
+	f.Intrinsic.Control.Else
+		gui.WOInstr.cmdPgUp.Enabled(true)
+		gui.WOInstr.cmdPgUp.Visible(true)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iPos,=,v.Local.iRet(1))
+		gui.WOInstr.cmdPgDown.Enabled(false)
+		gui.WOInstr.cmdPgDown.Visible(false)
+	f.Intrinsic.Control.Else
+		gui.WOInstr.cmdPgDown.Enabled(true)
+		gui.WOInstr.cmdPgDown.Visible(true)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+	f.Intrinsic.Control.Case("L")
+	f.Intrinsic.Math.Mult(v.Local.iPos,10,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,10,v.Local.iPosStrt)
+	f.Intrinsic.Control.Case("P")
+	f.Intrinsic.Math.Mult(v.Local.iPos,8,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,8,v.Local.iPosStrt)
+	f.Intrinsic.Control.EndSelect
+	
+	f.Intrinsic.Control.If(v.Local.iPosStop,>,v.DataTable.dtChild.RowCount--)
+		v.Local.iPosStop.Set(v.DataTable.dtChild.RowCount--)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Sub(v.Local.iPosStop,1,v.Local.iPosStop)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.For(v.Local.i,v.Local.iPosStrt,v.Local.iPosStop,1)
+		f.Intrinsic.String.Build("{0}{1}*!*{2}*!*{3}*!*{4}*!*",v.Local.sChild,v.DataTable.dtChild(v.Local.i).PART!FieldValTrim,v.DataTable.dtChild(v.Local.i).DESCRIPTION!FieldValTrim,v.DataTable.dtChild(v.Local.i).QTY!FieldVal,v.DataTable.dtChild(v.Local.i).FLAG!FieldVal,v.Local.sChild)
+	f.Intrinsic.Control.Next(v.Local.i)
+	
+f.Intrinsic.String.Split(v.Local.sChild,"*!*",v.Local.sChild)
+
+f.Intrinsic.Control.If(v.Local.sChild(0),<>,"OOB",and,v.Local.sChild(0),<>,"")
+
+gui.WOInstr.lblChild1.Caption(v.Local.sChild(0))
+gui.WOInstr.lblCDesc1.Caption(v.Local.sChild(1))
+gui.WOInstr.lblQty1.Caption(v.Local.sChild(2))
+gui.WOInstr.frmChild1.Enabled(true)
+gui.WOInstr.frmChild1.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(3),=,"Y")
+	Gui.WOInstr.frmChild1.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(3),=,"N")
+	Gui.WOInstr.frmChild1.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild1.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild1.Caption("")
+gui.WOInstr.lblCDesc1.Caption("")
+gui.WOInstr.lblQty1.Caption("")
+gui.WOInstr.frmChild1.Enabled(false)
+gui.WOInstr.frmChild1.Visible(false)
+Gui.WOInstr.frmChild1.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(4),<>,"OOB",and,v.Local.sChild(4),<>,"")	
+
+gui.WOInstr.lblChild2.Caption(v.Local.sChild(4))
+gui.WOInstr.lblCDesc2.Caption(v.Local.sChild(5))
+gui.WOInstr.lblQty2.Caption(v.Local.sChild(6))
+gui.WOInstr.frmChild2.Enabled(true)
+gui.WOInstr.frmChild2.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(7),=,"Y")
+	Gui.WOInstr.frmChild2.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(7),=,"N")
+	Gui.WOInstr.frmChild2.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild2.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild2.Caption("")
+gui.WOInstr.lblCDesc2.Caption("")
+gui.WOInstr.lblQty2.Caption("")
+gui.WOInstr.frmChild2.Enabled(false)
+gui.WOInstr.frmChild2.Visible(false)
+Gui.WOInstr.frmChild2.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(8),<>,"OOB",and,v.Local.sChild(8),<>,"")	
+
+gui.WOInstr.lblChild3.Caption(v.Local.sChild(8))
+gui.WOInstr.lblCDesc3.Caption(v.Local.sChild(9))
+gui.WOInstr.lblQty3.Caption(v.Local.sChild(10))
+gui.WOInstr.frmChild3.Enabled(true)
+gui.WOInstr.frmChild3.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(11),=,"Y")
+	Gui.WOInstr.frmChild3.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(11),=,"N")
+	Gui.WOInstr.frmChild3.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild3.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild3.Caption("")
+gui.WOInstr.lblCDesc3.Caption("")
+gui.WOInstr.lblQty3.Caption("")
+gui.WOInstr.frmChild3.Enabled(false)
+gui.WOInstr.frmChild3.Visible(false)
+Gui.WOInstr.frmChild3.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(12),<>,"OOB",and,v.Local.sChild(12),<>,"")	
+
+gui.WOInstr.lblChild4.Caption(v.Local.sChild(12))
+gui.WOInstr.lblCDesc4.Caption(v.Local.sChild(13))
+gui.WOInstr.lblQty4.Caption(v.Local.sChild(14))
+gui.WOInstr.frmChild4.Enabled(true)
+gui.WOInstr.frmChild4.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(15),=,"Y")
+	Gui.WOInstr.frmChild4.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(15),=,"N")
+	Gui.WOInstr.frmChild4.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild4.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild4.Caption("")
+gui.WOInstr.lblCDesc4.Caption("")
+gui.WOInstr.lblQty4.Caption("")
+gui.WOInstr.frmChild4.Enabled(false)
+gui.WOInstr.frmChild4.Visible(false)
+Gui.WOInstr.frmChild4.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(16),<>,"OOB",and,v.Local.sChild(16),<>,"")
+
+gui.WOInstr.lblChild5.Caption(v.Local.sChild(16))
+gui.WOInstr.lblCDesc5.Caption(v.Local.sChild(17))
+gui.WOInstr.lblQty5.Caption(v.Local.sChild(18))
+gui.WOInstr.frmChild5.Enabled(true)
+gui.WOInstr.frmChild5.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(19),=,"Y")
+	Gui.WOInstr.frmChild5.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(19),=,"N")
+	Gui.WOInstr.frmChild5.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild5.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild5.Caption("")
+gui.WOInstr.lblCDesc5.Caption("")
+gui.WOInstr.lblQty5.Caption("")
+gui.WOInstr.frmChild5.Enabled(false)
+gui.WOInstr.frmChild5.Visible(false)
+Gui.WOInstr.frmChild5.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+
+f.Intrinsic.Control.Case("L")
+
+f.Intrinsic.Control.If(v.Local.sChild(20),<>,"OOB",and,v.Local.sChild(20),<>,"")
+
+gui.WOInstr.lblChild6.Caption(v.Local.sChild(20))
+gui.WOInstr.lblCDesc6.Caption(v.Local.sChild(21))
+gui.WOInstr.lblQty6.Caption(v.Local.sChild(22))
+gui.WOInstr.frmChild6.Enabled(true)
+gui.WOInstr.frmChild6.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(23),=,"Y")
+	Gui.WOInstr.frmChild6.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(23),=,"N")
+	Gui.WOInstr.frmChild6.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild6.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild6.Caption("")
+gui.WOInstr.lblCDesc6.Caption("")
+gui.WOInstr.lblQty6.Caption("")
+gui.WOInstr.frmChild6.Enabled(false)
+gui.WOInstr.frmChild6.Visible(false)
+Gui.WOInstr.frmChild6.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(24),<>,"OOB",and,v.Local.sChild(24),<>,"")
+
+gui.WOInstr.lblChild7.Caption(v.Local.sChild(24))
+gui.WOInstr.lblCDesc7.Caption(v.Local.sChild(25))
+gui.WOInstr.lblQty7.Caption(v.Local.sChild(26))
+gui.WOInstr.frmChild7.Enabled(true)
+gui.WOInstr.frmChild7.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(27),=,"Y")
+	Gui.WOInstr.frmChild7.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(27),=,"N")
+	Gui.WOInstr.frmChild7.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild7.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild7.Caption("")
+gui.WOInstr.lblCDesc7.Caption("")
+gui.WOInstr.lblQty7.Caption("")
+gui.WOInstr.frmChild7.Enabled(false)
+gui.WOInstr.frmChild7.Visible(false)
+Gui.WOInstr.frmChild7.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(28),<>,"OOB",and,v.Local.sChild(28),<>,"")
+
+gui.WOInstr.lblChild8.Caption(v.Local.sChild(28))
+gui.WOInstr.lblCDesc8.Caption(v.Local.sChild(29))
+gui.WOInstr.lblQty8.Caption(v.Local.sChild(30))
+gui.WOInstr.frmChild8.Enabled(true)
+gui.WOInstr.frmChild8.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(31),=,"Y")
+	Gui.WOInstr.frmChild8.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(31),=,"N")
+	Gui.WOInstr.frmChild8.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild8.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild8.Caption("")
+gui.WOInstr.lblCDesc8.Caption("")
+gui.WOInstr.lblQty8.Caption("")
+gui.WOInstr.frmChild8.Enabled(false)
+gui.WOInstr.frmChild8.Visible(false)
+Gui.WOInstr.frmChild8.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(32),<>,"OOB",and,v.Local.sChild(32),<>,"")
+
+gui.WOInstr.lblChild9.Caption(v.Local.sChild(32))
+gui.WOInstr.lblCDesc9.Caption(v.Local.sChild(23))
+gui.WOInstr.lblQty9.Caption(v.Local.sChild(34))
+gui.WOInstr.frmChild9.Enabled(true)
+gui.WOInstr.frmChild9.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(35),=,"Y")
+	Gui.WOInstr.frmChild9.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(35),=,"N")
+	Gui.WOInstr.frmChild9.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild9.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild9.Caption("")
+gui.WOInstr.lblCDesc9.Caption("")
+gui.WOInstr.lblQty9.Caption("")
+gui.WOInstr.frmChild9.Enabled(false)
+gui.WOInstr.frmChild9.Visible(false)
+Gui.WOInstr.frmChild9.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(36),<>,"OOB",and,v.Local.sChild(36),<>,"")
+
+gui.WOInstr.lblChild10.Caption(v.Local.sChild(36))
+gui.WOInstr.lblCDesc10.Caption(v.Local.sChild(37))
+gui.WOInstr.lblQty10.Caption(v.Local.sChild(38))
+gui.WOInstr.frmChild10.Enabled(true)
+gui.WOInstr.frmChild10.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(39),=,"Y")
+	Gui.WOInstr.frmChild10.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(39),=,"N")
+	Gui.WOInstr.frmChild10.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild10.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild10.Caption("")
+gui.WOInstr.lblCDesc10.Caption("")
+gui.WOInstr.lblQty10.Caption("")
+gui.WOInstr.frmChild10.Enabled(false)
+gui.WOInstr.frmChild10.Visible(false)
+Gui.WOInstr.frmChild10.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdPgUp_Click.End
+
+Program.Sub.cmdPgDown_Click.Start
+v.Local.sPosCap.Declare
+v.Local.iRet.Declare
+v.Local.sSOInfo.Declare
+v.Local.sChild.Declare
+v.Local.iPos.Declare
+v.Local.iPosStrt.Declare
+v.Local.iPosStop.Declare
+v.Local.fPosEnd.Declare
+v.Local.i.Declare
+
+f.Intrinsic.String.Split(v.Screen.WOInstr!lblPos.Caption,"/",v.Local.iRet)
+f.Intrinsic.Math.Add(v.Local.iRet(0),1,v.Local.iPos)
+
+f.Intrinsic.Control.If(v.Local.iPos,<=,v.Local.iRet(1))
+
+	f.Intrinsic.String.Build("{0}/{1}",v.Local.iPos,v.Local.iRet(1),v.Local.sPosCap)
+	gui.WOInstr.lblPos.Caption(v.Local.sPosCap)
+	
+	f.Intrinsic.Control.If(v.Local.iPos,=,1)
+		gui.WOInstr.cmdPgUp.Enabled(false)
+		gui.WOInstr.cmdPgUp.Visible(false)
+	f.Intrinsic.Control.Else
+		gui.WOInstr.cmdPgUp.Enabled(true)
+		gui.WOInstr.cmdPgUp.Visible(true)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iPos,=,v.Local.iRet(1))
+		gui.WOInstr.cmdPgDown.Enabled(false)
+		gui.WOInstr.cmdPgDown.Visible(false)
+	f.Intrinsic.Control.Else
+		gui.WOInstr.cmdPgDown.Enabled(true)
+		gui.WOInstr.cmdPgDown.Visible(true)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+	f.Intrinsic.Control.Case("L")
+	f.Intrinsic.Math.Mult(v.Local.iPos,10,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,10,v.Local.iPosStrt)
+	f.Intrinsic.Control.Case("P")
+	f.Intrinsic.Math.Mult(v.Local.iPos,8,v.Local.iPosStop)
+	f.Intrinsic.Math.Sub(v.Local.iPosStop,8,v.Local.iPosStrt)
+	f.Intrinsic.Control.EndSelect
+	
+	f.Intrinsic.Control.If(v.Local.iPosStop,>,v.DataTable.dtChild.RowCount--)
+		v.Local.iPosStop.Set(v.DataTable.dtChild.RowCount--)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Math.Sub(v.Local.iPosStop,1,v.Local.iPosStop)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.For(v.Local.i,v.Local.iPosStrt,v.Local.iPosStop,1)
+		f.Intrinsic.String.Build("{0}{1}*!*{2}*!*{3}*!*{4}*!*",v.Local.sChild,v.DataTable.dtChild(v.Local.i).PART!FieldValTrim,v.DataTable.dtChild(v.Local.i).DESCRIPTION!FieldValTrim,v.DataTable.dtChild(v.Local.i).QTY!FieldVal,v.DataTable.dtChild(v.Local.i).FLAG!FieldVal,v.Local.sChild)
+	f.Intrinsic.Control.Next(v.Local.i)
+	
+f.Intrinsic.String.Split(v.Local.sChild,"*!*",v.Local.sChild)
+
+f.Intrinsic.Control.If(v.Local.sChild(0),<>,"OOB",and,v.Local.sChild(0),<>,"")
+
+gui.WOInstr.lblChild1.Caption(v.Local.sChild(0))
+gui.WOInstr.lblCDesc1.Caption(v.Local.sChild(1))
+gui.WOInstr.lblQty1.Caption(v.Local.sChild(2))
+gui.WOInstr.frmChild1.Enabled(true)
+gui.WOInstr.frmChild1.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(3),=,"Y")
+	Gui.WOInstr.frmChild1.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(3),=,"N")
+	Gui.WOInstr.frmChild1.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild1.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild1.Caption("")
+gui.WOInstr.lblCDesc1.Caption("")
+gui.WOInstr.lblQty1.Caption("")
+gui.WOInstr.frmChild1.Enabled(false)
+gui.WOInstr.frmChild1.Visible(false)
+Gui.WOInstr.frmChild1.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(4),<>,"OOB",and,v.Local.sChild(4),<>,"")	
+
+gui.WOInstr.lblChild2.Caption(v.Local.sChild(4))
+gui.WOInstr.lblCDesc2.Caption(v.Local.sChild(5))
+gui.WOInstr.lblQty2.Caption(v.Local.sChild(6))
+gui.WOInstr.frmChild2.Enabled(true)
+gui.WOInstr.frmChild2.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(7),=,"Y")
+	Gui.WOInstr.frmChild2.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(7),=,"N")
+	Gui.WOInstr.frmChild2.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild2.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild2.Caption("")
+gui.WOInstr.lblCDesc2.Caption("")
+gui.WOInstr.lblQty2.Caption("")
+gui.WOInstr.frmChild2.Enabled(false)
+gui.WOInstr.frmChild2.Visible(false)
+Gui.WOInstr.frmChild2.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(8),<>,"OOB",and,v.Local.sChild(8),<>,"")	
+
+gui.WOInstr.lblChild3.Caption(v.Local.sChild(8))
+gui.WOInstr.lblCDesc3.Caption(v.Local.sChild(9))
+gui.WOInstr.lblQty3.Caption(v.Local.sChild(10))
+gui.WOInstr.frmChild3.Enabled(true)
+gui.WOInstr.frmChild3.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(11),=,"Y")
+	Gui.WOInstr.frmChild3.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(11),=,"N")
+	Gui.WOInstr.frmChild3.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild3.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild3.Caption("")
+gui.WOInstr.lblCDesc3.Caption("")
+gui.WOInstr.lblQty3.Caption("")
+gui.WOInstr.frmChild3.Enabled(false)
+gui.WOInstr.frmChild3.Visible(false)
+Gui.WOInstr.frmChild3.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(12),<>,"OOB",and,v.Local.sChild(12),<>,"")	
+
+gui.WOInstr.lblChild4.Caption(v.Local.sChild(12))
+gui.WOInstr.lblCDesc4.Caption(v.Local.sChild(13))
+gui.WOInstr.lblQty4.Caption(v.Local.sChild(14))
+gui.WOInstr.frmChild4.Enabled(true)
+gui.WOInstr.frmChild4.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(15),=,"Y")
+	Gui.WOInstr.frmChild4.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(15),=,"N")
+	Gui.WOInstr.frmChild4.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild4.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild4.Caption("")
+gui.WOInstr.lblCDesc4.Caption("")
+gui.WOInstr.lblQty4.Caption("")
+gui.WOInstr.frmChild4.Enabled(false)
+gui.WOInstr.frmChild4.Visible(false)
+Gui.WOInstr.frmChild4.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(16),<>,"OOB",and,v.Local.sChild(16),<>,"")
+
+gui.WOInstr.lblChild5.Caption(v.Local.sChild(16))
+gui.WOInstr.lblCDesc5.Caption(v.Local.sChild(17))
+gui.WOInstr.lblQty5.Caption(v.Local.sChild(18))
+gui.WOInstr.frmChild5.Enabled(true)
+gui.WOInstr.frmChild5.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(19),=,"Y")
+	Gui.WOInstr.frmChild5.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(19),=,"N")
+	Gui.WOInstr.frmChild5.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild5.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild5.Caption("")
+gui.WOInstr.lblCDesc5.Caption("")
+gui.WOInstr.lblQty5.Caption("")
+gui.WOInstr.frmChild5.Enabled(false)
+gui.WOInstr.frmChild5.Visible(false)
+Gui.WOInstr.frmChild5.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.SelectCase(v.Global.sScreen)
+
+f.Intrinsic.Control.Case("L")
+
+f.Intrinsic.Control.If(v.Local.sChild(20),<>,"OOB",and,v.Local.sChild(20),<>,"")
+
+gui.WOInstr.lblChild6.Caption(v.Local.sChild(20))
+gui.WOInstr.lblCDesc6.Caption(v.Local.sChild(21))
+gui.WOInstr.lblQty6.Caption(v.Local.sChild(22))
+gui.WOInstr.frmChild6.Enabled(true)
+gui.WOInstr.frmChild6.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(23),=,"Y")
+	Gui.WOInstr.frmChild6.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(23),=,"N")
+	Gui.WOInstr.frmChild6.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild6.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild6.Caption("")
+gui.WOInstr.lblCDesc6.Caption("")
+gui.WOInstr.lblQty6.Caption("")
+gui.WOInstr.frmChild6.Enabled(false)
+gui.WOInstr.frmChild6.Visible(false)
+Gui.WOInstr.frmChild6.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(24),<>,"OOB",and,v.Local.sChild(24),<>,"")
+
+gui.WOInstr.lblChild7.Caption(v.Local.sChild(24))
+gui.WOInstr.lblCDesc7.Caption(v.Local.sChild(25))
+gui.WOInstr.lblQty7.Caption(v.Local.sChild(26))
+gui.WOInstr.frmChild7.Enabled(true)
+gui.WOInstr.frmChild7.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(27),=,"Y")
+	Gui.WOInstr.frmChild7.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(27),=,"N")
+	Gui.WOInstr.frmChild7.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild7.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild7.Caption("")
+gui.WOInstr.lblCDesc7.Caption("")
+gui.WOInstr.lblQty7.Caption("")
+gui.WOInstr.frmChild7.Enabled(false)
+gui.WOInstr.frmChild7.Visible(false)
+Gui.WOInstr.frmChild7.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(28),<>,"OOB",and,v.Local.sChild(28),<>,"")
+
+gui.WOInstr.lblChild8.Caption(v.Local.sChild(28))
+gui.WOInstr.lblCDesc8.Caption(v.Local.sChild(29))
+gui.WOInstr.lblQty8.Caption(v.Local.sChild(30))
+gui.WOInstr.frmChild8.Enabled(true)
+gui.WOInstr.frmChild8.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(31),=,"Y")
+	Gui.WOInstr.frmChild8.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(31),=,"N")
+	Gui.WOInstr.frmChild8.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild8.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild8.Caption("")
+gui.WOInstr.lblCDesc8.Caption("")
+gui.WOInstr.lblQty8.Caption("")
+gui.WOInstr.frmChild8.Enabled(false)
+gui.WOInstr.frmChild8.Visible(false)
+Gui.WOInstr.frmChild8.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(32),<>,"OOB",and,v.Local.sChild(32),<>,"")
+
+gui.WOInstr.lblChild9.Caption(v.Local.sChild(32))
+gui.WOInstr.lblCDesc9.Caption(v.Local.sChild(23))
+gui.WOInstr.lblQty9.Caption(v.Local.sChild(34))
+gui.WOInstr.frmChild9.Enabled(true)
+gui.WOInstr.frmChild9.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(35),=,"Y")
+	Gui.WOInstr.frmChild9.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(35),=,"N")
+	Gui.WOInstr.frmChild9.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild9.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild9.Caption("")
+gui.WOInstr.lblCDesc9.Caption("")
+gui.WOInstr.lblQty9.Caption("")
+gui.WOInstr.frmChild9.Enabled(false)
+gui.WOInstr.frmChild9.Visible(false)
+Gui.WOInstr.frmChild9.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sChild(36),<>,"OOB",and,v.Local.sChild(36),<>,"")
+
+gui.WOInstr.lblChild10.Caption(v.Local.sChild(36))
+gui.WOInstr.lblCDesc10.Caption(v.Local.sChild(37))
+gui.WOInstr.lblQty10.Caption(v.Local.sChild(38))
+gui.WOInstr.frmChild10.Enabled(true)
+gui.WOInstr.frmChild10.Visible(true)
+
+f.Intrinsic.Control.If(v.Local.sChild(39),=,"Y")
+	Gui.WOInstr.frmChild10.BackColor("GREEN")
+f.Intrinsic.Control.ElseIf(v.Local.sChild(39),=,"N")
+	Gui.WOInstr.frmChild10.BackColor("RED")
+f.Intrinsic.Control.Else
+	Gui.WOInstr.frmChild10.BackColor("CONTROL")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+gui.WOInstr.lblChild10.Caption("")
+gui.WOInstr.lblCDesc10.Caption("")
+gui.WOInstr.lblQty10.Caption("")
+gui.WOInstr.frmChild10.Enabled(false)
+gui.WOInstr.frmChild10.Visible(false)
+Gui.WOInstr.frmChild10.BackColor("CONTROL")
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdPgDown_Click.End
+
+Program.Sub.PID_Check.Start
+v.Local.bRet.Declare
+v.Local.sPID.Declare
+v.Local.sIPM.Declare
+v.Local.sFP.Declare
+v.Local.sJobSuf.Declare
+
+f.Intrinsic.String.Build("{0}\{1}",v.Caller.LocalGSSTempDir,"6529LOCK.txt",v.Global.sPID)
+f.Intrinsic.String.Build("{0}\{1}",v.Caller.LocalGSSTempDir,"6529IPM.txt",v.Global.sIPM)
+f.Intrinsic.File.Exists(v.Global.sPID,v.Local.bRet)
+
+f.Intrinsic.Control.If(v.Local.bRet,=,false)
+
+	f.Intrinsic.File.String2File(v.Global.sPID,v.Ambient.PID)
+	f.Intrinsic.File.String2File(v.Global.sIPM,v.Ambient.MyIPMh)
+	
+	Function.Intrinsic.Control.AddEventHandler("IPMDATAIN",ipmReceived)
+	
+	f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+	
+	f.Intrinsic.Control.Case("15754")
+		f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.009990)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+	f.Intrinsic.Control.Case("15935")
+		f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.009990)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+	f.Intrinsic.Control.Case("15780")
+		
+		f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+			v.Global.sEmpID.Set(v.Passed.009993)
+			v.Global.sEmpName.Set(v.Passed.009994)
+			f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Case("15951")
+	
+		f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+			v.Global.sEmpID.Set(v.Passed.009993)
+			v.Global.sEmpName.Set(v.Passed.009994)
+			f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Case("49754")
+		f.Intrinsic.Control.If(v.Passed.ScanSuffix,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.ScanJob,v.Passed.ScanSuffix,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.ScanJob)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.Employee)
+		v.Global.sEmpName.Set(v.Passed.EmployeeName)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+	f.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.Else
+
+	f.Intrinsic.File.File2String(v.Global.sPID,v.Local.sPID)
+	f.Intrinsic.File.File2String(v.Global.sIPM,v.Local.sIPM)
+	f.Intrinsic.Task.PIDRunning(v.Local.sPID,v.Local.bRet)
+	
+	f.Intrinsic.Control.If(v.Local.bRet,=,false)
+	
+		f.Intrinsic.File.DeleteFile(v.Global.sPID)
+		f.Intrinsic.File.DeleteFile(v.Global.sIPM)
+		
+		f.Intrinsic.File.String2File(v.Global.sPID,v.Ambient.PID)
+		f.Intrinsic.File.String2File(v.Global.sIPM,v.Ambient.MyIPMh)
+		
+		Function.Intrinsic.Control.AddEventHandler("IPMDATAIN",ipmReceived)
+		
+		f.Intrinsic.Control.Case("15754")
+		
+		f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.009990)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+		f.Intrinsic.Control.Case("15935")
+		
+		f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.009990)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.009993)
+		v.Global.sEmpName.Set(v.Passed.009994)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+		f.Intrinsic.Control.Case("15780")
+		f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+			v.Global.sEmpID.Set(v.Passed.009993)
+			v.Global.sEmpName.Set(v.Passed.009994)
+			f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Case("15951")
+		f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+			v.Global.sEmpID.Set(v.Passed.009993)
+			v.Global.sEmpName.Set(v.Passed.009994)
+			f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.Case("49754")
+		
+		f.Intrinsic.Control.If(v.Passed.ScanSuffix,<>,"")
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.ScanJob,v.Passed.ScanSuffix,v.Local.sJobSuf)
+		f.Intrinsic.Control.Else
+			v.Local.sJobSuf.Set(v.Passed.ScanJob)
+		f.Intrinsic.Control.EndIf
+		gui.WOInstr.txtScan.Text(v.Local.sJobSuf)
+		v.Global.sEmpID.Set(v.Passed.Employee)
+		v.Global.sEmpName.Set(v.Passed.EmployeeName)
+		f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+		
+		f.Intrinsic.Control.EndSelect
+		
+	f.Intrinsic.Control.Else
+	
+		f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+			
+		f.Intrinsic.Control.Case("49762")
+		
+			f.Intrinsic.Control.End
+			
+			gui.WOInstr..Visible(true)
+		
+		f.Intrinsic.Control.Case("15754")
+			
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("{0},{1},{2}",v.Local.sJobSuf,v.Passed.009993,v.Passed.009994,v.Local.sJobSuf)
+			f.Intrinsic.IPM.SendMessage(v.Local.sJobSuf,v.Local.sIPM)
+		
+			f.Intrinsic.Control.End
+			
+		f.Intrinsic.Control.Case("15935")
+			
+			f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.009990)
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("{0},{1},{2}",v.Local.sJobSuf,v.Passed.009993,v.Passed.009994,v.Local.sJobSuf)
+			f.Intrinsic.IPM.SendMessage(v.Local.sJobSuf,v.Local.sIPM)
+		
+			f.Intrinsic.Control.End
+			
+		f.Intrinsic.Control.Case("15951")
+			
+			f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+				f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+					f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+				f.Intrinsic.Control.Else
+					v.Local.sJobSuf.Set(v.Passed.009990)
+				f.Intrinsic.Control.EndIf
+				
+				f.Intrinsic.String.Build("{0},{1},{2}",v.Local.sJobSuf,v.Passed.009993,v.Passed.009994,v.Local.sJobSuf)
+				f.Intrinsic.IPM.SendMessage(v.Local.sJobSuf,v.Local.sIPM)
+			
+				f.Intrinsic.Control.End
+			f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.Case("15780")
+			
+			f.Intrinsic.Control.If(v.Passed.009990,<>,"")
+				f.Intrinsic.Control.If(v.Passed.009991,<>,"")
+					f.Intrinsic.String.Build("{0}-{1}",v.Passed.009990,v.Passed.009991,v.Local.sJobSuf)
+				f.Intrinsic.Control.Else
+					v.Local.sJobSuf.Set(v.Passed.009990)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Control.End
+			
+				gui.WOInstr..Visible(true)
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("{0},{1},{2}",v.Local.sJobSuf,v.Passed.009993,v.Passed.009994,v.Local.sJobSuf)
+			f.Intrinsic.IPM.SendMessage(v.Local.sJobSuf,v.Local.sIPM)
+		
+			f.Intrinsic.Control.End
+			
+		f.Intrinsic.Control.Case("49754")
+			
+			f.Intrinsic.Control.If(v.Passed.ScanSuffix,<>,"")
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.ScanJob,v.Passed.ScanSuffix,v.Local.sJobSuf)
+			f.Intrinsic.Control.Else
+				v.Local.sJobSuf.Set(v.Passed.ScanJob)
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("{0},{1},{2}",v.Local.sJobSuf,v.Passed.Employee,v.Passed.EmployeeName,v.Local.sJobSuf)
+			f.Intrinsic.IPM.SendMessage(v.Local.sJobSuf,v.Local.sIPM)
+		
+			f.Intrinsic.Control.End
+		
+		f.Intrinsic.Control.EndSelect
+	
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndIf
+Program.Sub.PID_Check.End
+
+Program.Sub.ipmReceived.Start
+v.Local.sRet.Declare
+
+f.Intrinsic.String.Split(v.Args.MESSAGE,",",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Screen.WOInstr!txtScan.Text,<>,v.Local.sRet(0))
+	f.Intrinsic.Control.CallSub(cmdClear_Click)
+	gui.WOInstr.txtScan.Text(v.Local.sRet(0))
+	f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+f.Intrinsic.Control.EndIf
+
+'f.Intrinsic.Control.If(v.Global.iScan,>,1)
+'	f.Data.Datatable.SetValue("dtScan",v.Global.iScanCount,"EMPLOYEE",v.Local.sRet(1))
+'	f.Intrinsic.Math.Add(v.Global.iScanCount,1,v.Global.iScanCount)
+'f.Intrinsic.Control.EndIf
+
+'f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+Program.Sub.ipmReceived.End 
+
+Program.Sub.cmdClear_Click.Start
+v.local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.Control.If(v.Screen.WOInstr!txtScan.Text,<>,"",and,v.Global.sEmpID,<>,"")
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Intrinsic.String.Split(v.Global.sDateDoc," ",v.Local.sDate)
+	f.Intrinsic.String.Format(v.Local.sDate(0),"yyyy-mm-dd",v.Local.sDate)
+	
+	f.Intrinsic.Control.If(v.Local.sDate,=,"")
+		v.Global.sVersion.Set(1)
+		v.Local.sDate.Set("1900-01-01")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Update GCG_6529_SCAN_LOG set VERSION_DOC = '{0}', DATE_DOC = '{1}' where USER_SCAN = '{2}' and PARTNUMBER = '{3}'",v.Global.sVersion,v.Local.sDate,v.Global.sEmpID,v.Global.sParent,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.ODBC.Connection!conx.Close
+	
+f.Intrinsic.Control.EndIf
+
+gui.WOInstr.txtScan.Text("")
+gui.WOInstr.txtScan.Enabled(true)
+
+Gui.WOInstr.frmDoc.BackColor(-2147483633)
+gui.WOInstr.frmWarning.Visible(False)
+gui.WOInstr.frmWarning.Enabled(False)
+
+gui.WOInstr.lblTeam.Caption("1")
+
+gui.WOInstr.lblJob.Visible(false)
+gui.WOInstr.lblParent.Caption("Waiting for Job Scan...")
+gui.WOInstr.lblPDesc.Visible(false)
+gui.WOInstr.lblDueDate.Visible(false)
+
+gui.WOInstr.frmChild1.Visible(false)
+gui.WOInstr.frmChild1.Enabled(false)
+gui.WOInstr.frmChild2.Visible(false)
+gui.WOInstr.frmChild2.Enabled(false)
+gui.WOInstr.frmChild3.Visible(false)
+gui.WOInstr.frmChild3.Enabled(false)
+gui.WOInstr.frmChild4.Visible(false)
+gui.WOInstr.frmChild4.Enabled(false)
+gui.WOInstr.frmChild5.Visible(false)
+gui.WOInstr.frmChild5.Enabled(false)
+gui.WOInstr.frmChild6.Visible(false)
+gui.WOInstr.frmChild6.Enabled(false)
+gui.WOInstr.frmChild7.Visible(false)
+gui.WOInstr.frmChild7.Enabled(false)
+gui.WOInstr.frmChild8.Visible(false)
+gui.WOInstr.frmChild8.Enabled(false)
+gui.WOInstr.frmChild9.Visible(false)
+gui.WOInstr.frmChild9.Enabled(false)
+gui.WOInstr.frmChild10.Visible(false)
+gui.WOInstr.frmChild10.Enabled(false)
+gui.WOInstr.cmdNav.Visible(false)
+gui.WOInstr.cmdNav.Enabled(false)
+gui.WOInstr.lblPos.Visible(false)
+gui.WOInstr.lblPos.Enabled(false)
+gui.WOInstr.cmdPgUp.Visible(false)
+gui.WOInstr.cmdPgUp.Enabled(false)
+gui.WOInstr.cmdPgDown.Visible(false)
+gui.WOInstr.cmdPgDown.Enabled(false)
+gui.WOInstr.htmlDoc.Visible(false)
+
+v.Global.iScan.Set(0)
+v.Global.iScanCount.Set(9999)
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.cmdTeamUp_Click.Start
+v.Local.iTeam.Declare
+
+f.Intrinsic.Math.Add(v.Screen.WOInstr!lblTeam.Caption,1,v.Local.iTeam)
+
+gui.WOInstr.lblTeam.Caption(v.Local.iTeam)
+Program.Sub.cmdTeamUp_Click.End
+
+Program.Sub.cmdTeamDown_Click.Start
+v.Local.iTeam.Declare
+
+f.Intrinsic.Math.Sub(v.Screen.WOInstr!lblTeam.Caption,1,v.Local.iTeam)
+
+f.Intrinsic.Control.If(v.Local.iTeam,<>,0)
+	gui.WOInstr.lblTeam.Caption(v.Local.iTeam)
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdTeamDown_Click.End
+
+Program.Sub.Load_Alert.Start
+v.Local.sSQL.Declare
+v.Local.sDate.Declare
+v.Local.sDateTime.Declare
+v.Local.sRet.Declare
+v.Local.i.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Date,"yyyy-mm-dd",v.Local.sDate)
+f.Intrinsic.String.Format(v.Ambient.Now,"yyyy-mm-dd hh:mm:ss",v.Local.sDateTime)
+
+f.Intrinsic.Control.If(v.DataTable.dtAlert.Exists,=,True)
+	f.Data.Datatable.Close("dtAlert")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select ALERT_ID, ALERT, SEVERITY, PART from GCG_6529_Work_Order_Alerts where PART = '{0}' and DATE_SET <= '{1}' and DATE_EXP >= '{1}'",v.Global.sParent,v.Local.sDate,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtAlert","conx",v.Local.sSQL,true)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtChild.RowCount--,1)
+	f.Intrinsic.String.Build("Select ALERT_ID, ALERT, SEVERITY, PART from GCG_6529_Work_Order_Alerts where PART = '{0}' and DATE_SET <= '{1}' and DATE_EXP >= '{1}'",v.DataTable.dtChild(v.Local.i).PART!FieldValTrim,v.Local.sDate,v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtAlertTemp","conx",v.Local.sSQL,true)
+	f.Data.DataTable.Merge("dtAlertTemp","dtAlert",true,2)
+	f.Data.DataTable.Close("dtAlertTemp")
+f.Intrinsic.Control.Next(v.Local.i)
+
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.If(v.DataTable.dtAlert.RowCount,>,0)
+	f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtAlert.RowCount--,1)
+	
+		v.Global.iAlertNo.Set(v.DataTable.dtAlert(v.Local.i).ALERT_ID!FieldVal)
+		
+		f.Intrinsic.String.Build("Select isnull(LOG_ID,'') as LOG_ID from GCG_6529_Alert_Log where ALERT_ID = '{0}' and JOB = '{1}' and SUFFIX = '{2}' and EMPLOYEE_ID = '{3}'",v.Global.iAlertNo,v.Global.sJob,v.Global.sSuffix,v.Global.sEmpID,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		
+		f.Intrinsic.Control.SelectCase(v.DataTable.dtAlert(v.Local.i).SEVERITY!FieldValTrim)
+		
+		f.Intrinsic.Control.Case("LOW")
+			v.Global.sAlert.Set("LOW")
+			f.Intrinsic.Control.If(v.Local.sRet,=,"")
+				f.Intrinsic.UI.Msgbox(v.DataTable.dtAlert(v.Local.i).ALERT!FieldValTrim,"ALERT!")
+				f.Intrinsic.String.Build("INSERT INTO GCG_6529_Alert_Log (JOB, SUFFIX, PART, ALERT_ID, USER_SIGNOFF, DATE_SIGNOFF, AUTHORIZATION, EMPLOYEE_ID) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",v.Global.sJob,v.Global.sSuffix,v.Global.sParent,v.Global.iAlertNo,v.Caller.User,v.Local.sDateTime,"",v.Global.sEmpID,v.Local.sSQL)
+				f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+			f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.Case("MEDIUM")
+			f.Intrinsic.Control.If(v.Local.sRet,=,"")
+				v.Global.sAlert.Set("MEDIUM")
+				gui.WOInstr..Enabled(false)
+				gui.AlertAuth.lblAlert.Caption(v.DataTable.dtAlert(v.Local.i).ALERT!FieldValTrim)
+				gui.AlertAuth..Visible(true)
+				gui.AlertAuth.txtAuth.SetFocus
+			f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.Case("HIGH")
+			v.Global.sAlert.Set("HIGH")
+			gui.WOInstr..Enabled(false)
+			gui.AlertAuth.lblAlert.Caption(v.DataTable.dtAlert(v.Local.i).ALERT!FieldValTrim)
+			gui.AlertAuth..Visible(true)
+			gui.AlertAuth.txtAuth.SetFocus
+			
+		f.Intrinsic.Control.Case("QUALITY")
+			v.Global.sAlert.Set("QUALITY")
+			gui.WOInstr..Enabled(false)
+			gui.AlertAuth.lblAlert.Caption(v.DataTable.dtAlert(v.Local.i).ALERT!FieldValTrim)
+			gui.AlertAuth..Visible(true)
+			gui.AlertAuth.txtAuth.SetFocus
+			
+		f.Intrinsic.Control.EndSelect
+		
+	f.Intrinsic.Control.Next(v.Local.i)
+	
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+Program.Sub.Load_Alert.End
+
+Program.Sub.Version_Check.Start
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sVerRet.Declare
+v.Local.sBOM.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Date,"yyyy-mm-dd",v.Local.sDate)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+'f.Intrinsic.String.Build("select rtrim(y.ID) as PART, rtrim(x.INFO_1) as VERSION, rtrim(x.INFO_2) as DATE_DOC from ATG_DOC_ASSOC as x left join LINK_DATA as y on cast(y.LINK_ID as int) = x.LINK_ID where y.TYPE = '00030' and x.FILE_TYPE = 'HTTP' and PART = '{0}' and x.GRP_ID = '{1}'",v.Global.sParent,v.Global.iGrpInstr,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sVerRet)
+
+'f.Intrinsic.String.Split(v.Local.sVerRet,"*!*",v.Local.sVerRet)
+
+'v.Global.sVersion.Set(v.Local.sVerRet(1))
+'v.Global.sDateDoc.Set(v.Local.sVerRet(2))
+
+f.Intrinsic.String.Build("select cast(LINK_ID as int) as LINK_ID, rtrim(ID) as PART from LINK_DATA where TYPE = '00030' and ID = '{0}'",v.Global.sParent,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtLD","conx",v.Local.sSQL,true)
+f.Intrinsic.String.Build("Select LINK_ID, rtrim(INFO_1) as VERSION, rtrim(INFO_2) as DATE_DOC from ATG_DOC_ASSOC where FILE_TYPE = 'HTTP' and GRP_ID = '{0}'",v.Global.iGrpInstr,v.Local.sSQL)
+f.Data.Datatable.CreateFromSQL("dtADA","conx",v.Local.sSQL,true)
+f.Data.Linq.Join("leftjoin","datatable","dtLD*!*A","datatable","dtADA*!*B","A.LINK_ID=B.LINK_ID","A.PART*!*B.VERSION*!*B.DATE_DOC","","","","dtJoin",True)
+
+f.Intrinsic.Control.If(v.DataTable.dtJoin.RowCount,>,0)
+
+	v.Global.sVersion.Set(v.DataTable.dtJoin(0).VERSION!FieldValTrim)
+	v.Global.sDateDoc.Set(v.DataTable.dtJoin(0).DATE_DOC!FieldValTrim)
+
+f.Intrinsic.Control.EndIf
+
+f.Data.Datatable.Close("dtLD")
+f.Data.Datatable.Close("dtADA")
+f.Data.Datatable.Close("dtJoin")
+
+f.Intrinsic.String.Build("select rtrim(VERSION_DOC) as VERSION, DATE_DOC FROM GCG_6529_SCAN_LOG WHERE PARTNUMBER = '{0}' and USER_SCAN = '{1}'",v.Global.sParent,v.Global.sEmpID,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+
+	f.Intrinsic.Control.If(v.Global.sVersion,<>,v.Local.sRet(0))
+		gui.WOInstr.frmDoc.BackColor("Red")
+		gui.WOInstr.lblWarning.BackColor("Gold")
+		gui.WOInstr.frmWarning.Visible(True)
+		gui.WOInstr.frmWarning.Enabled(True)
+	f.Intrinsic.Control.Else
+		Gui.WOInstr.frmDoc.BackColor(-2147483633)
+		gui.WOInstr.frmWarning.Visible(False)
+		gui.WOInstr.frmWarning.Enabled(False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Update GCG_6529_SCAN_LOG set VERSION_DOC = '{0}', DATE_DOC = '{1}' where USER_SCAN = '{2}' and PARTNUMBER = '{3}'",v.Global.sVersion,v.Local.sDate,v.Global.sEmpID,v.Global.sParent,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+f.Intrinsic.Control.Else
+
+	f.Intrinsic.String.Build("INSERT INTO GCG_6529_SCAN_LOG VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{5}')",v.Global.sParent,v.System.ComputerName,v.Global.sEmpID,v.Local.sBOM,0,v.Local.sDate,v.Global.sVersion,0,v.Local.sDate,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	Gui.WOInstr.frmDoc.BackColor(-2147483633)
+	gui.WOInstr.frmWarning.Visible(False)
+	gui.WOInstr.frmWarning.Enabled(False)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("select rtrim(PART), rtrim('Y ') as FLAG from V_JOB_OPERATIONS where JOB = '{0}' and SUFFIX = '{1}' and LMO = 'M'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+f.Data.Dictionary.CreateFromSQL("OPS","conx",v.Local.sSQL)
+f.Data.Dictionary.SetDefaultReturn("OPS","N")
+f.Data.Datatable.FillFromDictionary("dtChild","OPS","PART","FLAG")
+f.Data.Dictionary.Close("OPS")
+
+f.ODBC.Connection!conx.Close
+Program.Sub.Version_Check.End
+
+Program.Sub.AlertAuth_UnLoad.Start
+gui.AlertAuth.txtAuth.Text("")
+gui.AlertAuth..Visible(false)
+gui.WOInstr..Enabled(true)
+Program.Sub.AlertAuth_UnLoad.End
+
+Program.Sub.txtAuth_KeyPressEnter.Start
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sDate.Declare
+v.Local.sDateTime.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Date,"yyyy-mm-dd",v.Local.sDate)
+f.Intrinsic.String.Format(v.Ambient.Now,"yyyy-mm-dd hh:mm:ss",v.Local.sDateTime)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select NAME, DEPT_EMPLOYEE, PR_USER_ID from V_EMPLOYEE_MSTR where EMPLOYEE = '{0}'",v.Screen.AlertAuth!txtAuth.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+f.Intrinsic.Control.SelectCase(v.Global.sAlert)
+
+f.Intrinsic.Control.Case("MEDIUM")
+	f.Intrinsic.String.Build("INSERT INTO GCG_6529_Alert_Log (JOB, SUFFIX, PART, ALERT_ID, USER_SIGNOFF, DATE_SIGNOFF, AUTHORIZATION, EMPLOYEE_ID) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",v.Global.sJob,v.Global.sSuffix,v.Global.sParent,v.Global.iAlertNo,v.Caller.User,v.Local.sDateTime,v.Local.sRet(2),v.Global.sEmpID,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+f.Intrinsic.Control.Case("HIGH")
+	f.Intrinsic.Control.If(v.Local.sRet(1),=,"SUPV")
+		f.Intrinsic.String.Build("INSERT INTO GCG_6529_Alert_Log (JOB, SUFFIX, PART, ALERT_ID, USER_SIGNOFF, DATE_SIGNOFF, AUTHORIZATION, EMPLOYEE_ID) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",v.Global.sJob,v.Global.sSuffix,v.Global.sParent,v.Global.iAlertNo,v.Caller.User,v.Local.sDateTime,v.Local.sRet(2),v.Global.sEmpID,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("The badge scanned does not have supervisor clearance.  Please scan a badge with supervisor clearance.","ERROR!")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Case("QUALITY")
+	f.Intrinsic.Control.If(v.Local.sRet(1),=,"QUAL")
+		f.Intrinsic.String.Build("INSERT INTO GCG_6529_Alert_Log (JOB, SUFFIX, PART, ALERT_ID, USER_SIGNOFF, DATE_SIGNOFF, AUTHORIZATION, EMPLOYEE_ID) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",v.Global.sJob,v.Global.sSuffix,v.Global.sParent,v.Global.iAlertNo,v.Caller.User,v.Local.sDateTime,v.Local.sRet(2),v.Global.sEmpID,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("The badge scanned does not have quality clearance.  Please scan a badge with quality clearance.","ERROR!")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndSelect
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.CallSub(AlertAuth_UnLoad)
+Program.Sub.txtAuth_KeyPressEnter.End
+
+Program.Sub.Scan_Team.Start
+v.Local.sRet.Declare
+
+f.Intrinsic.UI.Msgbox("Is there more than one employee clocking into the job?","ALERT!",4,v.Local.sRET)
+
+f.Intrinsic.Control.If(v.Local.sRET,=,v.Ambient.MsgBoxYes)
+
+	gui.ScanCount.lblScanCount.Caption("1")
+	gui.WOInstr..Enabled(false)
+	gui.WOInstr..AlwaysOnTop(false)
+	gui.ScanCount..Visible(true)
+	gui.ScanCount..AlwaysOnTop(true)
+
+	f.Intrinsic.Control.If(v.DataTable.dtScan.Exists,=,true)
+		f.Data.Datatable.Close("dtScan")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.Datatable.Create("dtScan",true)
+	f.Data.Datatable.AddColumn("dtScan","SCAN_NUM","float")
+	f.Data.Datatable.AddColumn("dtScan","EMPLOYEE","string")
+	
+f.Intrinsic.Control.Else
+
+	v.Global.iScan.Set(1)
+	v.Global.iScanCount.Set(1)
+	gui.WOInstr.lblTeam.Caption("1")
+	f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+
+f.Intrinsic.Control.EndIf
+Program.Sub.Scan_Team.End
+
+Program.Sub.ScanCount_UnLoad.Start
+gui.ScanCount..Visible(false)
+gui.ScanCount..AlwaysOnTop(false)
+gui.WOInstr..Enabled(true)
+gui.WOInstr..AlwaysOnTop(true)
+Program.Sub.ScanCount_UnLoad.End
+
+Program.Sub.cmdScanUp_Click.Start
+v.Local.iTeam.Declare
+
+f.Intrinsic.Math.Add(v.Screen.ScanCount!lblScanCount.Caption,1,v.Local.iTeam)
+
+gui.ScanCount.lblScanCount.Caption(v.Local.iTeam)
+Program.Sub.cmdScanUp_Click.End
+
+Program.Sub.cmdScanDown_Click.Start
+v.Local.iTeam.Declare
+
+f.Intrinsic.Math.Sub(v.Screen.ScanCount!lblScanCount.Caption,1,v.Local.iTeam)
+
+f.Intrinsic.Control.If(v.Local.iTeam,<>,0)
+	gui.ScanCount.lblScanCount.Caption(v.Local.iTeam)
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdScanDown_Click.End
+
+Program.Sub.cmdScanOk_Click.Start
+v.Local.i.Declare
+v.Local.sRet.Declare
+v.Local.sMsg.Declare
+
+v.Global.iScan.Set(v.Screen.ScanCount!lblScanCount.Caption)
+v.Global.iScanCount.Set(1)
+
+gui.WOInstr.lblTeam.Caption(v.Global.iScan)
+
+f.Intrinsic.Control.For(v.Local.i,1,v.Global.iScan,1)
+	f.Intrinsic.Control.If(v.Local.i,=,1)
+		f.Data.Datatable.AddRow("dtScan","SCAN_NUM",v.Local.i,"EMPLOYEE",v.Global.sEmpID)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Please scan employee #{0}'s badge.",v.Local.i,v.Local.sMsg)
+		f.Intrinsic.UI.Inputbox(v.Local.sMsg,"Badge Scan","",v.Local.sRet)
+		f.Data.Datatable.AddRow("dtScan","SCAN_NUM",v.Local.i,"EMPLOYEE",v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.i)
+
+v.Global.iScanCount.Set(v.Global.iScan)
+
+f.Intrinsic.Control.CallSub(ScanCount_UnLoad)
+
+f.Intrinsic.Control.CallSub(txtParent_KeyPressEnter)
+Program.Sub.cmdScanOk_Click.End
+
+Program.Sub.Explode_BOM.Start
+V.Local.sFieldNames.Declare 
+V.Local.sTypes.Declare 
+V.Local.sFilePath.Declare 
+V.Local.sParams.Declare 
+V.Local.bExists.Declare 
+V.Local.sRet.Declare 
+V.Local.sFile.Declare
+v.Local.i.Declare
+v.Local.ifor.Declare 
+V.Local.sRet1.Declare 
+v.Local.fQty.Declare
+v.Local.sLvl.Declare
+F.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+V.Local.sFieldNames.Set("Line*!*Seq*!*Part*!*Description*!*Cat*!*Source*!*Count1*!*OnHand*!*OnOrder*!*Required*!*Net*!*RtrNet*!*Parent*!*ldHrs*!*LdDate*!*filler*!*UM*!*GSS_EXTRA_DESC*!*ParentFLAG")
+V.Local.sTypes.Set("String*!*String*!*String*!*String*!*String*!*String*!*string*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String*!*String")
+
+F.Intrinsic.String.Build("{0}\BOM{1}",V.System.Temp,V.Caller.Terminal,V.Local.sFilePath)
+F.Intrinsic.String.Build("0{0}{1}{0}{2}",V.Ambient.Tab,v.Global.sParent,v.Local.sFilePath,V.Local.sParams)
+F.Intrinsic.File.String2File(V.Local.sFilePath,V.Local.sParams)
+F.Global.General.CallWrapperSync(410000,V.Local.sFilePath)
+
+
+'Explode w/ qty
+'F.Intrinsic.String.Concat(V.System.Temp,"\EXPLODEBOM",V.Caller.Terminal,".txt",V.Local.sFilePath)
+'F.Intrinsic.String.Build("{2}{0}{1}{0}{3}",V.Ambient.Tab,V.local.sparentpart,0,0,V.Local.sFile)
+'F.Intrinsic.File.String2File(V.Local.sFilePath,V.Local.sFile)
+'F.Global.General.CallWrapperSync(410000,V.Local.sFilePath)
+
+
+F.Intrinsic.File.Exists(V.Local.sFilePath,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.File.FiletoStringArray(V.Local.sFilePath,V.Ambient.Tab,V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,3)
+F.Intrinsic.File.GetFileNameFromFQN(V.Local.sRet(3),V.Local.sFile.Trim)
+F.Intrinsic.String.Split(V.Local.sFile," ",V.Local.sFile)
+F.Intrinsic.String.Build("{0}\{1}",V.System.Temp,V.Local.sFile(0).Trim,V.Local.sFilePath)
+F.Intrinsic.File.Exists(V.Local.sFilePath,V.Local.bExists)
+
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+
+'load it to a string
+F.Intrinsic.File.File2String(V.Local.sFilePath,V.Local.sRet)
+'f.Intrinsic.String.Replace(v.Local.sRet,"*","",v.Local.sRet)
+
+
+F.Intrinsic.Control.If(v.DataTable.DTTemp.Exists,=,True)
+	F.Data.DataTable.Close("DTTemp")
+Function.Intrinsic.Control.EndIf
+
+
+F.Data.DataTable.CreateFromString("DTTemp",V.Local.sret,V.Local.sFieldNames,V.Local.sTypes,"|~|",v.ambient.newline,True)
+
+f.Data.DataTable.AddColumn("DTTemp","REL",string)
+f.Data.Datatable.AddColumn("DTTemp","ParentCat",string)
+f.Data.Datatable.AddColumn("DTTemp","ParentQty",float)
+
+f.Intrinsic.String.Build("{0}-{1}",v.Global.sParent,0,V.Local.sRet1)
+F.Data.DataTable.SetValue("DTTemp",-1,"REL",V.Local.sRet1)
+
+'F.Data.DataTable.SetValue("DTTemp",-1,"REL",v.Args.Parent.trim)
+
+Function.Data.DataTable.DeleteRow("DTTemp",v.dataTable.DTTemp.RowCount--)
+
+f.Intrinsic.Control.For(v.Local.ifor,6,0,-1)
+	Function.Data.DataTable.DeleteRow("DTTemp", v.Local.ifor)
+f.Intrinsic.Control.Next(v.Local.ifor)
+
+	f.Data.DataView.Create("DTTemp","DVTemp")
+	Function.Data.DataView.ToDataTableDistinct("DTTemp","DVTemp","DTParent1","Parent")
+	Function.Data.DataView.ToDataTableDistinct("DTTemp","DVTemp","DTCat","Part*!*Cat*!*Count1")
+	f.Data.DataTable.AddColumn("DTParent1","ParentFLAG","string")
+	F.Data.DataTable.SetValue("DTParent1",-1,"ParentFLAG","Y")
+
+
+	Function.Data.Dictionary.CreateFromDataTable("DICParent","DTParent1","Parent","ParentFLAG")
+	F.Data.Dictionary.SetDefaultReturn("DICParent"," ")
+	Function.Data.Dictionary.CreateFromDataTable("DICCat","DTCat","Part","Cat")
+	F.Data.Dictionary.SetDefaultReturn("DICCat"," ")
+	Function.Data.Dictionary.CreateFromDataTable("DICQty","DTCat","Part","Count1")
+	F.Data.Dictionary.SetDefaultReturn("DICQty","0")
+
+	F.Data.DataTable.FillFromDictionary("DTTemp","DICParent","Part","ParentFLAG")
+	F.Data.DataTable.FillFromDictionary("DTTemp","DICCat","Parent","ParentCat")
+	F.Data.DataTable.FillFromDictionary("DTTemp","DICQty","Parent","ParentQty")
+	
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.DTTemp.RowCount--,1)
+
+	v.Local.fQty.Set(v.DataTable.DTTemp(v.Local.i).Count1!FieldVal)
+
+	f.Intrinsic.Control.If(v.DataTable.DTTemp(v.Local.i).Seq!FieldValTrim,<>,"",and,v.DataTable.DTTemp(v.Local.i).Cat!FieldValTrim,<>,"Pht")
+	
+		f.Intrinsic.String.Replace(v.DataTable.DTTemp(v.Local.i).Seq!FieldValTrim," ","",v.Local.sLvl)
+		f.Intrinsic.String.Replace(v.Local.sLvl,"*","",v.Local.sLvl)
+		
+		f.Intrinsic.Control.If(v.Local.sLvl,>,1,and,v.DataTable.DTTemp(v.Local.i).ParentCat!FieldValTrim,=,"Pht")
+			f.Intrinsic.Math.Mult(v.Local.fQty,v.DataTable.DTTemp(v.Local.i).ParentQty!FieldVal,v.Local.fQty)
+			f.Data.Datatable.AddRow("dtChild","PART",v.DataTable.DTTemp(v.Local.i).Part!FieldValTrim,"DESCRIPTION",v.DataTable.DTTemp(v.Local.i).Description!FieldValTrim,"QTY",v.Local.fQty)
+		f.Intrinsic.Control.ElseIf(v.Local.sLvl,=,1)
+			f.Data.Datatable.AddRow("dtChild","PART",v.DataTable.DTTemp(v.Local.i).Part!FieldValTrim,"DESCRIPTION",v.DataTable.DTTemp(v.Local.i).Description!FieldValTrim,"QTY",v.Local.fQty)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Next(v.Local.i)
+
+F.Data.DataTable.Close("DTTemp")
+f.Data.Datatable.Close("DTParent1")
+f.Data.Dictionary.Close("DICParent")
+f.Data.Datatable.Close("DTCat")
+f.Data.Dictionary.Close("DICCat")
+f.Data.Dictionary.Close("DICQty")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(Main)
+f.Intrinsic.Control.EndTry
+Program.Sub.Explode_BOM.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$rcole$}$20230511112750462$}$ZUe18EWXbmRoTBVoeWbrFagM+XZUVh5oVHaz3e6zFc8BJm7kXDHR0sGjpn03BXhOhi4ariTDAmQ=
+Program.Sub.Comments.End
