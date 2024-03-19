@@ -1,0 +1,740 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.DocLib..Create
+Gui.DocLib..Caption("Document Library")
+Gui.DocLib..Size(13050,13695)
+Gui.DocLib..MinX(0)
+Gui.DocLib..MinY(0)
+Gui.DocLib..Position(0,0)
+Gui.DocLib..BackColor(-2147483633)
+Gui.DocLib..MousePointer(0)
+Gui.DocLib..Event(UnLoad,DocLib_UnLoad)
+Gui.DocLib.cmdAdd.Create(Button)
+Gui.DocLib.cmdAdd.Size(2160,375)
+Gui.DocLib.cmdAdd.Position(10620,12720)
+Gui.DocLib.cmdAdd.Caption("Add New Document")
+Gui.DocLib.cmdAdd.FontStyle(True,False,False,False,False)
+Gui.DocLib.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.DocLib.cmdAdd.Anchor(10)
+Gui.DocLib.tabDocs.Create(Tab)
+Gui.DocLib.tabDocs.Size(12705,12585)
+Gui.DocLib.tabDocs.Position(45,45)
+Gui.DocLib.tabDocs.Tabs(2)
+Gui.DocLib.tabDocs.SetTab(0)
+Gui.DocLib.tabDocs.Caption("Instructions")
+Gui.DocLib.tabDocs.SetTab(1)
+Gui.DocLib.tabDocs.Caption("Drawings")
+Gui.DocLib.GsGcDocLib.Create(GsGridControl)
+Gui.DocLib.GsGcDocLib.Size(12540,12180)
+Gui.DocLib.GsGcDocLib.Position(30,0)
+Gui.DocLib.GsGcDocLib.Event(RowCellClick,GsGcDocLib_RowCellClick)
+Gui.DocLib.GsGcDocLib.Event(CellValueChanged,GsGcDocLib_CellValueChanged)
+Gui.DocLib.GsGcDocLib.Anchor(15)
+Gui.DocLib.GsGcDocLib.Parent("tabDocs",0)
+Gui.DocLib.GsGcDocLibDwg.Create(GsGridControl)
+Gui.DocLib.GsGcDocLibDwg.Size(12540,12180)
+Gui.DocLib.GsGcDocLibDwg.Position(30,0)
+Gui.DocLib.GsGcDocLibDwg.Parent("tabDocs",1)
+Gui.DocLib.GsGcDocLibDwg.Anchor(15)
+Gui.DocLib.GsGcDocLibDwg.Event(CellValueChanged,GsGcDocLibDwg_CellValueChanged)
+Gui.DocLib.cmdRefresh.Create(Button)
+Gui.DocLib.cmdRefresh.Size(375,375)
+Gui.DocLib.cmdRefresh.Position(10140,12720)
+Gui.DocLib.cmdRefresh.Caption("REFRESH")
+Gui.DocLib.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.DocLib.chkDisable.Create(CheckBox)
+Gui.DocLib.chkDisable.Size(2130,360)
+Gui.DocLib.chkDisable.Position(7905,12720)
+Gui.DocLib.chkDisable.Caption("Disable Data Re-load")
+Gui.DocLib.chkDisable.FontStyle(True,False,False,False,False)
+Gui.DocAdd..Create
+Gui.DocAdd..Caption("Add New Document")
+Gui.DocAdd..Size(10050,2730)
+Gui.DocAdd..MinX(0)
+Gui.DocAdd..MinY(0)
+Gui.DocAdd..Position(0,0)
+Gui.DocAdd..AlwaysOnTop(True)
+Gui.DocAdd..BackColor(-2147483633)
+Gui.DocAdd..MaxButton(False)
+Gui.DocAdd..MinButton(False)
+Gui.DocAdd..MousePointer(0)
+Gui.DocAdd..Sizeable(False)
+Gui.DocAdd..Event(UnLoad,Form_UnLoad)
+Gui.DocAdd.txtDocDesc.Create(TextBox,"",True,2775,300,0,180,345,True,0,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtDocHTTP.Create(TextBox,"",True,5985,300,0,3090,345,True,0,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtPart.Create(TextBox,"",True,3165,300,0,180,1080,True,2,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtPart.MaxLength(20)
+Gui.DocAdd.txtPart.Event(LostFocus,txtPart_LostFocus)
+Gui.DocAdd.cmdBrws.Create(Button)
+Gui.DocAdd.cmdBrws.Size(375,375)
+Gui.DocAdd.cmdBrws.Position(3480,1050)
+Gui.DocAdd.cmdBrws.Caption("BROWSE")
+Gui.DocAdd.cmdBrws.Event(Click,cmdBrws_Click)
+Gui.DocAdd.txtPartDesc.Create(TextBox,"",True,5925,300,0,3975,1080,True,0,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtPartDesc.Locked(True)
+Gui.DocAdd.lblDocDesc.Create(Label,"Document Description",True,2760,255,0,180,120,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblDocDesc.FontStyle(True,False,False,False,False)
+Gui.DocAdd.lblDocHTTP.Create(Label,"Doccument HTTP Address",True,5955,255,0,3090,120,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblDocHTTP.FontStyle(True,False,False,False,False)
+Gui.DocAdd.lblPart.Create(Label,"Part",True,1935,255,0,180,840,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblPart.FontStyle(True,False,False,False,False)
+Gui.DocAdd.lblPartDesc.Create(Label,"Part Description",True,5820,255,0,3975,840,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblPartDesc.FontStyle(True,False,False,False,False)
+Gui.DocAdd.lblDocVer.Create(Label,"Ver.",True,660,255,0,9210,120,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblDocVer.FontStyle(True,False,False,False,False)
+Gui.DocAdd.txtDocVer.Create(TextBox,"",True,690,300,0,9210,345,True,2,"Arial",8,-2147483643,1)
+Gui.DocAdd.cmdAddNew.Create(Button)
+Gui.DocAdd.cmdAddNew.Size(1215,375)
+Gui.DocAdd.cmdAddNew.Position(8685,1800)
+Gui.DocAdd.cmdAddNew.Caption("Add New")
+Gui.DocAdd.cmdAddNew.FontStyle(True,False,False,False,False)
+Gui.DocAdd.cmdAddNew.Event(Click,cmdAddNew_Click)
+Gui.DocAdd.lblGrpDesc.Create(Label,"Group Description",True,3150,255,0,3735,1560,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblGrpDesc.FontStyle(True,False,False,False,False)
+Gui.DocAdd.txtGrpDesc.Create(TextBox,"",True,4785,300,0,3765,1830,True,0,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtGrpDesc.MaxLength(20)
+Gui.DocAdd.txtGrpDesc.Locked(True)
+Gui.DocAdd.lblGrp.Create(Label,"Doc Group",True,1110,255,0,180,1560,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblGrp.FontStyle(True,False,False,False,False)
+Gui.DocAdd.cmdBrwsGrp.Create(Button)
+Gui.DocAdd.cmdBrwsGrp.Size(375,375)
+Gui.DocAdd.cmdBrwsGrp.Position(990,1800)
+Gui.DocAdd.cmdBrwsGrp.Caption("BROWSE")
+Gui.DocAdd.cmdBrwsGrp.Event(Click,cmdBrwsGrp_Click)
+Gui.DocAdd.txtGrp.Create(TextBox,"",True,690,300,0,180,1830,True,2,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtGrp.Locked(True)
+Gui.DocAdd.lblGrpName.Create(Label,"Group Name",True,2070,255,0,1515,1560,True,0,"Arial",8,-2147483633,0)
+Gui.DocAdd.lblGrpName.FontStyle(True,False,False,False,False)
+Gui.DocAdd.txtGrpName.Create(TextBox,"",True,2145,300,0,1500,1830,True,0,"Arial",8,-2147483643,1)
+Gui.DocAdd.txtGrpName.MaxLength(20)
+Gui.DocAdd.txtGrpName.Locked(True)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sPONum.Declare
+v.Global.sDocPath.Declare
+v.Global.iGrpInt.Declare
+v.Global.iGrpExt.Declare
+v.Global.iGrpDrw.Declare
+v.Global.iGrpInstr.Declare
+Program.External.Include.Library("915000.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Robert Cole 01/06/2021
+'Added/ Changed:
+
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+gui.DocLib.tabDocs.SetTab(0)
+
+f.Intrinsic.Control.CallSub(Directory_Check)
+f.Intrinsic.Control.CallSub(Data_Load)
+
+gui.DocLib..Visible(true)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.DocLib_UnLoad.Start
+gui.DocLib..Visible(false)
+
+f.Intrinsic.Control.End
+Program.Sub.DocLib_UnLoad.End
+
+Program.Sub.Data_Load.Start
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sFP.Declare
+v.Local.sFilter.Declare
+v.Local.bRet.Declare
+v.Local.i.Declare
+
+f.Intrinsic.UI.InvokeWaitDialog("Please Wait...Loading Document Library...","Loading...")
+
+f.Intrinsic.Control.If(v.DataTable.dtDocLib.Exists)
+
+	f.Data.DataView.Close("dtDocLib$DocPart","dvDocPart")
+	f.Data.DataTable.Close("dtDocLib$DocPart")
+	
+	f.Data.DataView.Close("dtDocLib","dvDocLib")
+	f.Data.DataTable.Close("dtDocLib")
+
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.ODBC.Connection!conx.ExecuteandReturn("Select GRP_ID from ATG_DOC_GRP where GRP_NAME like '%Drawing%' or GRP_NAME like '%DRAWING%' or GRP_NAME like '%DWG%'",v.Global.iGrpDrw)
+f.ODBC.Connection!conx.ExecuteandReturn("Select GRP_ID from ATG_DOC_GRP where GRP_NAME like '%Work Instr%' or GRP_NAME like '%WORK INSTR%'",v.Global.iGrpInstr)
+
+f.Intrinsic.String.Build("select * from ATG_DOC_ASSOC where GRP_ID in ('{0}', '{1}') and FILE_TYPE = 'HTTP' and (ifnull(INFO_1,'') = '' or ifnull(INFO_2,'') = '')",v.Global.iGrpInstr,v.Global.iGrpDrw,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("dtVerMissing","conx",v.Local.sSQL,true)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtVerMissing.RowCount--,1)
+
+	f.Intrinsic.String.Build("Select top 1 rtrim(INFO_1), rtrim(INFO_2) from ATG_DOC_ASSOC where rtrim(FILE) = '{0}' order by INFO_2 DESC",v.DataTable.dtVerMissing(v.Local.i).FILE!FieldValTrim,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	f.Intrinsic.String.Build("UPDATE ATG_DOC_ASSOC set INFO_1 = '{0}', INFO_2 = '{1}' where FILE_NUM = '{2}'",v.Local.sRet(0),v.Local.sRet(1),v.DataTable.dtVerMissing(v.Local.i).FILE_NUM!FieldVal,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.Control.Next(v.Local.i)
+
+f.Data.DataTable.Close("dtVerMissing")
+
+f.Intrinsic.String.Build("select distinct LINK_ID, ucase(rtrim(FILE)) as PATH_FILE, rtrim(INFO_1) as VERSION, rtrim(INFO_2) as DATE, GRP_ID from ATG_DOC_ASSOC where FILE_TYPE = 'HTTP' and PATH_FILE <> '' and GRP_ID in ('{0}', '{1}')",v.Global.iGrpDrw,v.Global.iGrpInstr,v.Local.sSQL)
+'f.Data.DataTable.CreateFromSQL("dtDocLib","conx",v.Local.sSQL,true)
+f.Data.DataTable.CreateFromSQL("dtDocAssoc","conx",v.Local.sSQL,true)
+f.Data.DataTable.CreateFromSQL("dtLinkData","conx","select cast(LINK_ID as INT) as LINK_ID, rtrim(ID) as PART from LINK_DATA where TYPE = '00030' and PART <> ''",true)
+f.Data.Linq.Join("leftjoin","datatable","dtDocAssoc*!*A","datatable","dtLinkData*!*B","A.LINK_ID=B.LINK_ID","B.PART*!*A.PATH_FILE*!*A.VERSION*!*A.DATE*!*A.GRP_ID","","","","dtDocLib",True)
+
+f.Data.DataTable.AddColumn("dtDocLib","DESC_FILE","string")
+'f.Data.DataTable.AddColumn("dtDocLib","ADD","string")
+
+'f.Intrinsic.String.Build("select rtrim(x.FILE) as PATH_FILE_CHILD, rtrim(y.ID) as PART from ATG_DOC_ASSOC as x left join LINK_DATA as y on cast(y.LINK_ID as int) = x.LINK_ID where x.FILE_TYPE = 'HTTP' and x.GRP_ID in ('{0}', '{1}')",v.Global.iGrpInstr,v.Global.iGrpDrw,v.Local.sSQL)
+'f.Intrinsic.String.Build("select LINK_ID, ucase(rtrim(FILE)) as PATH_FILE_CHILD from ATG_DOC_ASSOC where FILE_TYPE = 'HTTP' and GRP_ID in ('{0}', '{1}')",v.Global.iGrpInstr,v.Global.iGrpDrw,v.Local.sSQL)
+'f.Data.DataTable.CreateFromSQL("dtDocAssoc","conx",v.Local.sSQL,true)
+'f.Data.DataTable.CreateFromSQL("dtLinkData","conx","select cast(LINK_ID as INT) as LINK_ID, rtrim(ID) as PART from LINK_DATA where TYPE = '00030' and PART <> ''",true)
+'f.Data.Linq.Join("leftjoin","datatable","dtDocAssoc*!*A","datatable","dtLinkData*!*B","A.LINK_ID=B.LINK_ID","A.PATH_FILE_CHILD*!*B.PART","","","A.PATH_FILE_CHILD","dtJoin",True)
+
+'f.Data.DataView.Create("dtJoin","dvJoin",22,"PATH_FILE_CHILD <> '' and PART <> ''","PART")
+
+'f.Data.DataView.ToDataTableDistinct("dtJoin","dvJoin","dtDocLib$DocPart","PATH_FILE_CHILD*!*PART",true)
+
+'f.Data.DataView.Close("dtJoin","dvJoin")
+'f.Data.DataTable.Close("dtJoin")
+f.Data.DataTable.Close("dtDocAssoc")
+f.Data.DataTable.Close("dtLinkData")
+
+'f.Data.DataTable.AddColumn("dtDocLib$DocPart","DESCRIPTION","string")
+f.Data.DataTable.AddColumn("dtDocLib","DESCRIPTION","string")
+
+f.Data.Dictionary.CreateFromSQL("DESC_FILE","conx","Select rtrim(FILE), rtrim(DESCRIPTION) as DESC_FILE from ATG_DOC_ASSOC")
+f.Data.Dictionary.SetDefaultReturn("DESC_FILE","")
+f.Data.DataTable.FillFromDictionary("dtDocLib","DESC_FILE","PATH_FILE","DESC_FILE")
+f.Data.Dictionary.Close("DESC_FILE")
+
+'f.Data.Dictionary.CreateFromSQL("DESC","conx","Select rtrim(PART), rtrim(DESCRIPTION) as DESCRIPTION from V_INVENTORY_MSTR")
+'f.Data.Dictionary.SetDefaultReturn("DESC","")
+'f.Data.DataTable.FillFromDictionary("dtDocLib$DocPart","DESC","PART","DESCRIPTION")
+'f.Data.Dictionary.Close("DESC")
+
+f.Data.Dictionary.CreateFromSQL("DESC","conx","Select rtrim(PART), rtrim(DESCRIPTION) as DESCRIPTION from V_INVENTORY_MSTR")
+f.Data.Dictionary.SetDefaultReturn("DESC","")
+f.Data.DataTable.FillFromDictionary("dtDocLib","DESC","PART","DESCRIPTION")
+f.Data.Dictionary.Close("DESC")
+
+f.ODBC.Connection!conx.Close
+
+'f.Data.DataTable.AddRelation("dtDocLib","PATH_FILE","dtDocLib$DocPart","PATH_FILE_CHILD","PARTS")
+
+f.Intrinsic.String.Build("PATH_FILE <> '' and GRP_ID = '{0}'",v.Global.iGrpInstr,v.Local.sFilter)
+f.Data.DataView.Create("dtDocLib","dvDocLib",22,v.Local.sFilter,"DESC_FILE ASC")
+f.Intrinsic.String.Build("PATH_FILE <> '' and GRP_ID = '{0}'",v.Global.iGrpDrw,v.Local.sFilter)
+f.Data.DataView.Create("dtDocLib","dvDocDrw",22,v.Local.sFilter,"DESC_FILE ASC")
+
+'f.Data.DataView.Create("dtDocLib$DocPart","dvDocPart",22,"","PART ASC")
+
+f.Intrinsic.Control.CallSub(DocLib_Format)
+
+f.Intrinsic.UI.CloseWaitDialog
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Data_Load.End
+
+Program.Sub.DocLib_Format.Start
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+v.local.i.Declare
+
+v.Local.i.Set(0)
+
+gui.DocLib.GsGcDocLib.AddGridviewFromDataview("gvDocLib","dtDocLib","dvDocLib")
+gui.DocLib.GsGcDocLibDwg.AddGridviewFromDataview("gvDocDrw","dtDocLib","dvDocDrw")
+'gui.DocLib.GsGcDocLib.AddGridviewFromDataview("gvDocPart","dtDocLib","dvDocPart")
+'gui.DocLib.GsGcDocLibDwg.AddGridviewFromDataview("gvDocPart","dtDocLib","dvDocPart")
+
+gui.DocLib.GsGcDocLib.Visible(False)
+gui.DocLib.GsGcDocLibDwg.Visible(False)
+gui.DocLib.GsGcDocLib.SuspendLayout()
+gui.DocLib.GsGcDocLibDwg.SuspendLayout()
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","GRP_ID","Visible",False)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","GRP_ID","Visible",False)
+
+gui.DocLib.GsGcDocLib.SetGridviewProperty("gvDocLib","OptionsDetailShowDetailTabs",True)
+gui.DocLib.GsGcDocLib.SetGridviewProperty("gvDocLib","Showgrouppanel",False)
+
+gui.DocLib.GsGcDocLibDwg.SetGridviewProperty("gvDocDrw","OptionsDetailShowDetailTabs",True)
+gui.DocLib.GsGcDocLibDwg.SetGridviewProperty("gvDocDrw","Showgrouppanel",False)
+
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","Caption","")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","HeaderFontBold","TRUE")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","HeaderHAlignment","CENTER")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","CellHAlignment","CENTER")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","MinWidth",)
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","MaxWidth",)
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","DisplayCustomNumeric","$###,##0.00")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","ReadOnly","TRUE")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","AllowEdit","FALSE")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","","VisibleIndex",v.Local.i)
+'f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","Caption","Part")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","MinWidth",85)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PART","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","Caption","File Description")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","MinWidth",125)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESCRIPTION","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","Caption","File Description")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","MinWidth",125)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DESC_FILE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","Caption","File Path")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","CellForeColor","Blue")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","CellFontUnderline","True")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","MinWidth",200)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","PATH_FILE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","Caption","Version")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","HeaderHAlignment","CENTER")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","CellHAlignment","CENTER")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","CellBackColor","LightYellow")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","MinWidth",45)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","ReadOnly","False")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","AllowEdit","True")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","VERSION","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","Caption","Date/Time")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","HeaderHAlignment","FAR")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","CellHAlignment","FAR")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","MinWidth",85)
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","DATE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","Caption","Add")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","HeaderFontBold","TRUE")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","HeaderHAlignment","CENTER")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","CellHAlignment","CENTER")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","MinWidth",45)
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","ReadOnly","TRUE")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","AllowEdit","FALSE")
+'gui.DocLib.GsGcDocLib.ColumnEdit("gvDocLib","ADD","EditorButton","Add")
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocLib","ADD","VisibleIndex",v.Local.i)
+'f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+v.Local.i.Set(0)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","Caption","Part")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","MinWidth",85)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PART","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","Caption","File Description")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","MinWidth",125)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESCRIPTION","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","Caption","File Description")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","MinWidth",125)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DESC_FILE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","Caption","File Path")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","HeaderHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","CellHAlignment","LEFT")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","CellForeColor","Blue")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","CellFontUnderline","True")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","MinWidth",200)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","PATH_FILE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","Caption","Version")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","HeaderHAlignment","CENTER")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","CellHAlignment","CENTER")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","CellBackColor","LightYellow")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","MinWidth",45)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","ReadOnly","False")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","AllowEdit","True")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","VERSION","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","Caption","Date/Time")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","HeaderFontBold","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","HeaderHAlignment","FAR")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","CellHAlignment","FAR")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","MinWidth",85)
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","ReadOnly","TRUE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","AllowEdit","FALSE")
+gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","DATE","VisibleIndex",v.Local.i)
+f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","Caption","Add")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","HeaderFontBold","TRUE")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","HeaderHAlignment","CENTER")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","CellHAlignment","CENTER")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","MinWidth",45)
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","ReadOnly","TRUE")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","AllowEdit","FALSE")
+'gui.DocLib.GsGcDocLibDwg.ColumnEdit("gvDocDrw","ADD","EditorButton","Add")
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocDrw","ADD","VisibleIndex",v.Local.i)
+'f.Intrinsic.Math.Add(v.local.i,1,v.Local.i)
+
+'gui.DocLib.GsGcDocLib.SetColumnProperty("gvDocPart","PATH_FILE_CHILD","Visible",false)
+'gui.DocLib.GsGcDocLibDwg.SetColumnProperty("gvDocPart","PATH_FILE_CHILD","Visible",false)
+
+gui.DocLib.GsGcDocLib.MainView("gvDocLib")
+gui.DocLib.GsGcDocLibDwg.MainView("gvDocDrw")
+
+gui.DocLib.GsGcDocLib.ResumeLayout()
+gui.DocLib.GsGcDocLibDwg.ResumeLayout()
+gui.DocLib.GsGcDocLib.Visible(True)
+gui.DocLib.GsGcDocLibDwg.Visible(True)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.DocLib_Format.End
+
+Program.Sub.Directory_Check.Start
+'CHECK FOR AND CREATE ANY DIRECTORIES NEEDED FOR 6577
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.bRet.Declare
+v.Local.sFP.Declare
+
+f.Intrinsic.String.Build("{0}\CUSTOM\6577",v.Caller.GlobalDir,v.Local.sFP)
+f.Intrinsic.File.DirExists(v.Local.sFP,v.Local.bRet)
+f.Intrinsic.Control.If(v.Local.bRet,=,false)
+	f.Intrinsic.File.CreateDir(v.Local.sFP)
+f.Intrinsic.Control.EndIf
+v.Local.sFP.Set("")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Directory_Check.End
+
+Program.Sub.GsGcDocLib_RowCellClick.Start
+v.Local.sSQL.Declare
+v.Local.sSQLRet.Declare
+v.Local.sRet.Declare
+v.Local.sLinkID.Declare
+v.Local.iLink.Declare
+v.Local.sFileID.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Now,"YYYY-MM-DD HH:MM:SS",v.Local.sDate)
+
+f.Intrinsic.Control.If(v.Args.Column,=,"PATH_FILE")
+	f.Intrinsic.Task.ShellExec("Open","Open",v.DataTable.dtDocLib(v.Args.RowIndex).PATH_FILE!FieldValTrim,"","",1)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Args.Column,=,"ADD")
+
+f.Intrinsic.UI.Browser(100,,v.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from LINK_DATA where TYPE = '00030' and ID = '{0}'",v.Local.sRet(0),v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.sSQLRet)
+		f.ODBC.Connection!conx.Close
+		
+		f.Intrinsic.Control.If(v.Ambient.ExecuteandReturnEOF.not)
+		
+			f.Intrinsic.String.Split(v.Local.sSQLRet,"*!*",v.Local.sSQLRet)
+			v.Local.iLink.Set(v.Local.sSQLRet(0))
+			
+		f.Intrinsic.Control.Else
+		
+			f.ODBC.Connection!conx.OpenCompanyConnection
+	'LINK_ID, TYPE, ID, PATH, FILE_NAME, FILL1, FILL2
+			f.ODBC.Connection!conx.ExecuteandReturn("select max(cast(LINK_ID as int))+1 as LINK_ID from LINK_DATA",v.Local.sLinkID)
+			v.Local.iLink.Set(v.Local.sLinkID)
+			f.Intrinsic.String.LPad(v.Local.sLinkID,"0",9,v.Local.sLinkID)
+			f.Intrinsic.String.Build("INSERT INTO LINK_DATA VALUES ('{0}', '00030', '{1}', '', '', '', '')",v.Local.sLinkID,v.Local.sRet(0),v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+			f.ODBC.Connection!conx.Close
+			
+		f.Intrinsic.Control.EndIf
+		
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.ODBC.Connection!conx.ExecuteandReturn("select max(cast(FILE_NUM as int))+1 as FILE_NUM from ATG_DOC_ASSOC",v.Local.sFileID)
+	'FILE_NUM, LINK_ID, FILE_TYPE, PATH, FILE, DESCRIPTION, DATE_ADDED, GS_USER, GRP_ID, INFO_1, INFO_2, STATUS, REV, INV_NON_REV
+		f.Intrinsic.String.Build("INSERT INTO ATG_DOC_ASSOC VALUES ('{0}', '{1}', 'HTTP', '', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', Null, '', '0')",v.Local.sFileID,v.Local.iLink,v.DataTable.dtDocLib(v.Args.RowIndex).PATH_FILE!FieldValTrim,v.DataTable.dtDocLib(v.Args.RowIndex).DESC_FILE!FieldValTrim,v.Local.sDate,v.Caller.User,v.Global.iGrpInstr,v.DataTable.dtDocLib(v.Args.RowIndex).VERSION!FieldValTrim,v.DataTable.dtDocLib(v.Args.RowIndex).DATE!FieldValTrim,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.ODBC.Connection!conx.Close
+		
+		f.Intrinsic.Control.If(v.Screen.DocLib!chkDisable.Value,=,0)
+			f.Intrinsic.Control.CallSub(Data_Load)
+		f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.EndIf
+Program.Sub.GsGcDocLib_RowCellClick.End
+
+Program.Sub.GsGcDocLib_CellValueChanged.Start
+v.Local.sSQL.Declare
+v.Local.sNow.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Now,"MM/DD/YYYY HH:MM:SS",v.Local.sNow)
+
+f.Intrinsic.String.Build("UPDATE ATG_DOC_ASSOC set INFO_1 = '{0}', INFO_2 = '{1}' where ucase(rtrim(FILE)) = '{2}'",v.DataTable.dtDocLib(v.Args.RowIndex).VERSION!FieldValTrim,v.Local.sNow,v.DataTable.dtDocLib(v.Args.RowIndex).PATH_FILE!FieldValTrim,v.Local.sSQL)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Screen.DocLib!chkDisable.Value,=,0)
+	f.Intrinsic.Control.CallSub(Data_Load)
+f.Intrinsic.Control.EndIf
+Program.Sub.GsGcDocLib_CellValueChanged.End
+
+Program.Sub.GsGcDocLibDwg_CellValueChanged.Start
+v.Local.sSQL.Declare
+v.Local.sNow.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Now,"MM/DD/YYYY HH:MM",v.Local.sNow)
+
+f.Intrinsic.String.Build("UPDATE ATG_DOC_ASSOC set INFO_1 = '{0}', INFO_2 = '{1}' where ucase(rtrim(FILE)) = '{2}'",v.DataTable.dtDocLib(v.Args.RowIndex).VERSION!FieldValTrim,v.Local.sNow,v.DataTable.dtDocLib(v.Args.RowIndex).PATH_FILE!FieldValTrim,v.Local.sSQL)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Screen.DocLib!chkDisable.Value,=,0)
+	f.Intrinsic.Control.CallSub(Data_Load)
+f.Intrinsic.Control.EndIf
+Program.Sub.GsGcDocLibDwg_CellValueChanged.End
+
+Program.Sub.cmdAdd_Click.Start
+gui.DocLib..Enabled(false)
+
+gui.DocAdd..Visible(true)
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.Form_UnLoad.Start
+gui.DocAdd.txtDocDesc.Text("")
+gui.DocAdd.txtDocHTTP.Text("")
+gui.DocAdd.txtDocVer.Text("")
+gui.DocAdd.txtPart.Text("")
+gui.DocAdd.txtPartDesc.Text("")
+gui.DocAdd.txtGrp.Text("")
+gui.DocAdd.txtGrpName.Text("")
+gui.DocAdd.txtGrpDesc.Text("")
+
+gui.DocAdd..Visible(false)
+gui.DocLib..Enabled(true)
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdBrws_Click.Start
+v.Local.sRet.Declare
+
+f.Intrinsic.UI.Browser(100,,v.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.DocAdd.txtPart.Text(v.Local.sRet(0).Trim)
+	gui.DocAdd.txtPartDesc.Text(v.Local.sRet(3).Trim)
+
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdBrws_Click.End
+
+Program.Sub.cmdAddNew_Click.Start
+v.Local.sSQL.Declare
+v.Local.sSQLRet.Declare
+v.Local.sRet.Declare
+v.Local.sLinkID.Declare
+v.Local.iLink.Declare
+v.Local.sFileID.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Now,"YYYY-MM-DD HH:MM:SS",v.Local.sDate)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+f.Intrinsic.String.Build("Select * from LINK_DATA where TYPE = '00030' and ID = '{0}'",v.Screen.DocAdd!txtPart.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.sSQLRet)
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteandReturnEOF.not)
+
+	f.Intrinsic.String.Split(v.Local.sSQLRet,"*!*",v.Local.sSQLRet)
+	v.Local.iLink.Set(v.Local.sSQLRet(0))
+	
+f.Intrinsic.Control.Else
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+'LINK_ID, TYPE, ID, PATH, FILE_NAME, FILL1, FILL2
+	f.ODBC.Connection!conx.ExecuteandReturn("select max(cast(LINK_ID as int))+1 as LINK_ID from LINK_DATA",v.Local.sLinkID)
+	v.Local.iLink.Set(v.Local.sLinkID)
+	f.Intrinsic.String.LPad(v.Local.sLinkID,"0",9,v.Local.sLinkID)
+	f.Intrinsic.String.Build("INSERT INTO LINK_DATA VALUES ('{0}', '00030', '{1}', '', '', '', '')",v.Local.sLinkID,v.Screen.DocAdd!txtPart.Text,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.ODBC.Connection!conx.Close
+	
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+f.ODBC.Connection!conx.ExecuteandReturn("select max(cast(FILE_NUM as int))+1 as FILE_NUM from ATG_DOC_ASSOC",v.Local.sFileID)
+'FILE_NUM, LINK_ID, FILE_TYPE, PATH, FILE, DESCRIPTION, DATE_ADDED, GS_USER, GRP_ID, INFO_1, INFO_2, STATUS, REV, INV_NON_REV
+f.Intrinsic.String.Build("INSERT INTO ATG_DOC_ASSOC VALUES ('{0}', '{1}', 'HTTP', '', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', Null, '', '0')",v.Local.sFileID,v.Local.iLink,v.Screen.DocAdd!txtDocHTTP.Text,v.Screen.DocAdd!txtDocDesc.Text,v.Local.sDate,v.Caller.User,v.Screen.DocAdd!txtGrp.Text,v.Screen.DocAdd!txtDocVer.Text,v.Ambient.Now,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.CallSub(Form_Unload)
+Program.Sub.cmdAddNew_Click.End
+
+Program.Sub.txtPart_LostFocus.Start
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.Screen.DocAdd!txtPart.Text,<>,"")
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	
+	f.Intrinsic.String.Build("Select rtrim(DESCRIPTION) from V_INVENTORY_MSTR where PART = '{0}'",v.Screen.DocAdd!txtPart.Text,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.sRet)
+	
+	f.ODBC.Connection!conx.Close
+	
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+		
+		gui.DocAdd.txtPartDesc.Text(v.Local.sRet)
+	
+	f.Intrinsic.Control.Else
+	
+		f.Intrinsic.Control.ExitSub
+	
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.EndIf
+Program.Sub.txtPart_LostFocus.End
+
+Program.Sub.cmdBrwsGrp_Click.Start
+'CREATE CUSTOM BROWSER TO SELECT DOC GROUPS FOR PODOCS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sTitle.Declare
+v.Local.iWidth.Declare
+v.Local.sRet.Declare
+
+'EMF Company Code is using Group ID 1 ? Drawings
+
+'STX Company Code is using Group ID 4 ? Drawings and Group ID 3 ? Work Instructions
+
+'MAD Company Code is using Group ID 1 ? DWG and Group ID 6 ? Work Instructions.
+
+'GET THE DOCUMENT GROUP IDS FOR THE INTERNAL AND EXTERNAL GROUPS (THIS IS A HARD CODED VALUE FROM MAINTENANCE)
+
+f.Intrinsic.String.Split("ID*!*GROUP*!*DESCRIPTION","*!*",v.Local.sTitle)
+f.Intrinsic.String.Split("200*!*800*!*1000","*!*",v.Local.iWidth)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("select GRP_ID, rtrim(GRP_NAME) as GROUP_NAME, rtrim(GRP_DESC) as GROUP_DESCRIPTION from ATG_DOC_GRP where GRP_ID in ('{0}', '{1}')",v.Global.iGrpDrw,v.Global.iGrpInstr,v.Local.sSQL)
+F.Intrinsic.UI.Browser("Document Control Group Browser","conx",v.Local.sSQL,v.Local.sTitle,v.Local.iWidth,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	gui.DocAdd.txtGrp.Text(v.Local.sRet(0))
+	gui.DocAdd.txtGrpName.Text(v.Local.sRet(1))
+	gui.DocAdd.txtGrpDesc.Text(v.Local.sRet(2))
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwsGrp_Click.End
+
+Program.Sub.cmdRefresh_Click.Start
+f.Intrinsic.Control.CallSub(Data_Load)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$rcole$}$20230412123732059$}$ZUe18EWXbmRoTBVoeWbrFagM+XZUVh5o/YZzQ94zv07oBcq3fXrslUx9xq1jSHz0qZLy+vgtphM=
+Program.Sub.Comments.End
